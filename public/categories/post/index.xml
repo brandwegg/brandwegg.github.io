@@ -2,51 +2,51 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Post on Johan Röjås</title>
-    <link>http://localhost:1313/categories/post/</link>
+    <link>//localhost:1313/categories/post/</link>
     <description>Recent content in Post on Johan Röjås</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2026 Johan Röjås</copyright>
-    <lastBuildDate>Tue, 31 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 31 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="//localhost:1313/categories/post/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Recreating the tentacles from returnal</title>
-      <link>http://localhost:1313/posts/post-lite-four/</link>
+      <link>//localhost:1313/posts/post-lite-four/</link>
       <pubDate>Tue, 31 Mar 2026 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/post-lite-four/</guid>
+      <guid>//localhost:1313/posts/post-lite-four/</guid>
       <description>A little summary, how quaint.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/post-lite-four/cover.gif" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/posts/post-lite-four/cover.gif" />
     </item>
     
     <item>
       <title>Action system</title>
-      <link>http://localhost:1313/posts/post-lite-two/</link>
+      <link>//localhost:1313/posts/post-lite-two/</link>
       <pubDate>Sun, 04 Sep 2022 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/post-lite-two/</guid>
+      <guid>//localhost:1313/posts/post-lite-two/</guid>
       <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean in eleifend justo, vestibulum congue lacus. Quisque est libero, lacinia sed placerat ac, interdum id urna.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/post-lite-two/cover.png" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/posts/post-lite-two/cover.png" />
     </item>
     
     <item>
       <title>Godrays</title>
-      <link>http://localhost:1313/posts/post-lite-three/</link>
+      <link>//localhost:1313/posts/post-lite-three/</link>
       <pubDate>Sun, 04 Sep 2022 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/post-lite-three/</guid>
+      <guid>//localhost:1313/posts/post-lite-three/</guid>
       <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean in eleifend justo, vestibulum congue lacus. Quisque est libero, lacinia sed placerat ac, interdum id urna.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/post-lite-three/cover.webp" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/posts/post-lite-three/cover.webp" />
     </item>
     
     <item>
       <title>Masked transparency</title>
-      <link>http://localhost:1313/posts/post-lite-one/</link>
+      <link>//localhost:1313/posts/post-lite-one/</link>
       <pubDate>Sun, 04 Sep 2022 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/post-lite-one/</guid>
+      <guid>//localhost:1313/posts/post-lite-one/</guid>
       <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean in eleifend justo, vestibulum congue lacus. Quisque est libero, lacinia sed placerat ac, interdum id urna.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/post-lite-one/cover.png" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/posts/post-lite-one/cover.png" />
     </item>
     
   </channel>

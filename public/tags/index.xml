@@ -2,39 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Johan Röjås</title>
-    <link>http://localhost:1313/tags/</link>
+    <link>//localhost:1313/tags/</link>
     <description>Recent content in Tags on Johan Röjås</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2026 Johan Röjås</copyright>
-    <lastBuildDate>Tue, 31 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 31 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="//localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Ipsum</title>
-      <link>http://localhost:1313/tags/ipsum/</link>
+      <link>//localhost:1313/tags/ipsum/</link>
       <pubDate>Tue, 31 Mar 2026 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/ipsum/</guid>
+      <guid>//localhost:1313/tags/ipsum/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Lorem</title>
-      <link>http://localhost:1313/tags/lorem/</link>
+      <link>//localhost:1313/tags/lorem/</link>
       <pubDate>Tue, 31 Mar 2026 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/lorem/</guid>
+      <guid>//localhost:1313/tags/lorem/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Post</title>
-      <link>http://localhost:1313/tags/post/</link>
+      <link>//localhost:1313/tags/post/</link>
       <pubDate>Tue, 31 Mar 2026 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/post/</guid>
+      <guid>//localhost:1313/tags/post/</guid>
       <description></description>
       
     </item>
