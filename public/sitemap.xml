@@ -45,7 +45,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>//localhost:1313/posts/post-lite-four/</loc>
+    <loc>//localhost:1313/posts/recreating-tentacles/</loc>
     <lastmod>2026-03-31T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -57,19 +57,19 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>//localhost:1313/posts/post-lite-two/</loc>
+    <loc>//localhost:1313/posts/action-system/</loc>
+    <lastmod>2026-03-04T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>//localhost:1313/posts/godrays/</loc>
     <lastmod>2022-09-04T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>//localhost:1313/posts/post-lite-three/</loc>
-    <lastmod>2022-09-04T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>//localhost:1313/posts/post-lite-one/</loc>
+    <loc>//localhost:1313/posts/masked-transparency/</loc>
     <lastmod>2022-09-04T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>

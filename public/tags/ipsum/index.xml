@@ -11,42 +11,42 @@
     
     <item>
       <title>Recreating the tentacles from returnal</title>
-      <link>//localhost:1313/posts/post-lite-four/</link>
+      <link>//localhost:1313/posts/recreating-tentacles/</link>
       <pubDate>Tue, 31 Mar 2026 00:00:00 +0000</pubDate>
       
-      <guid>//localhost:1313/posts/post-lite-four/</guid>
+      <guid>//localhost:1313/posts/recreating-tentacles/</guid>
       <description>A little summary, how quaint.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/posts/post-lite-four/cover.gif" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/posts/recreating-tentacles/cover.gif" />
     </item>
     
     <item>
-      <title>Action system</title>
-      <link>//localhost:1313/posts/post-lite-two/</link>
-      <pubDate>Sun, 04 Sep 2022 00:00:00 +0000</pubDate>
+      <title>Callback-centered action buffer</title>
+      <link>//localhost:1313/posts/action-system/</link>
+      <pubDate>Wed, 04 Mar 2026 00:00:00 +0000</pubDate>
       
-      <guid>//localhost:1313/posts/post-lite-two/</guid>
-      <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean in eleifend justo, vestibulum congue lacus. Quisque est libero, lacinia sed placerat ac, interdum id urna.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/posts/post-lite-two/cover.png" />
+      <guid>//localhost:1313/posts/action-system/</guid>
+      <description>A system that manages actions and input buffers.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/posts/action-system/cover.png" />
     </item>
     
     <item>
       <title>Godrays</title>
-      <link>//localhost:1313/posts/post-lite-three/</link>
+      <link>//localhost:1313/posts/godrays/</link>
       <pubDate>Sun, 04 Sep 2022 00:00:00 +0000</pubDate>
       
-      <guid>//localhost:1313/posts/post-lite-three/</guid>
-      <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean in eleifend justo, vestibulum congue lacus. Quisque est libero, lacinia sed placerat ac, interdum id urna.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/posts/post-lite-three/cover.webp" />
+      <guid>//localhost:1313/posts/godrays/</guid>
+      <description>Screen-space volumetric godrays.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/posts/godrays/cover.webp" />
     </item>
     
     <item>
       <title>Masked transparency</title>
-      <link>//localhost:1313/posts/post-lite-one/</link>
+      <link>//localhost:1313/posts/masked-transparency/</link>
       <pubDate>Sun, 04 Sep 2022 00:00:00 +0000</pubDate>
       
-      <guid>//localhost:1313/posts/post-lite-one/</guid>
-      <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean in eleifend justo, vestibulum congue lacus. Quisque est libero, lacinia sed placerat ac, interdum id urna.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/posts/post-lite-one/cover.png" />
+      <guid>//localhost:1313/posts/masked-transparency/</guid>
+      <description>Faked transparency using masking of opaque objects.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/posts/masked-transparency/cover.png" />
     </item>
     
   </channel>
