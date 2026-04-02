@@ -49,5 +49,15 @@
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/posts/post-lite-one/cover.png" />
     </item>
     
+    <item>
+      <title>About me</title>
+      <link>//localhost:1313/about-me/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/about-me/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;m a student at &lt;a href=&#34;https://thegameassembly.com/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;The Game Assembly&lt;/a&gt; with a great passion for programming.&#xA;What peaks my interest the most is graphics; from architecture and pipeline to VFX, as well as gameplay.&lt;/p&gt;</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/about-me/cover.png" />
+    </item>
+    
   </channel>
 </rss>

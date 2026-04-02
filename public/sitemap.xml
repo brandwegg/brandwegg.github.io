@@ -81,6 +81,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>//localhost:1313/about-me/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>//localhost:1313/authors/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>

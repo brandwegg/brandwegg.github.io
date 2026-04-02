@@ -21,7 +21,7 @@ showScrollToTop = true
 layout = "background"
 homepageImage = "img/cover.png"
 showRecent = true
-showRecentItems = 3
+showRecentItems = 6
 showMoreLink = true
 showMoreLinkDest = "/blowfish_artist/posts"
 cardView = true
@@ -29,7 +29,7 @@ cardViewScreenWidth = false
 layoutBackgroundBlur = true
 
 [article]
-showDate = true
+showDate = false
 showDateUpdated = false
 showAuthor = true
 showHero = true
@@ -42,11 +42,11 @@ seriesOpened = false
 showHeadingAnchors = true
 showPagination = true
 invertPagination = false
-showReadingTime = true
+showReadingTime = false
 showTableOfContents = true
 showTaxonomies = false
 showAuthorsBadges = false
-showWordCount = true
+showWordCount = false
 showSummary = true
 sharingLinks = [
   "linkedin",
@@ -60,6 +60,7 @@ sharingLinks = [
 layoutBackgroundBlur = true
 showAuthorBottom = true
 editURL = ""
+showDateOnlyInArticle = true
 
 [list]
 showHero = true
