@@ -12,7 +12,7 @@ draft: false
 ## Intro
 For this project I wanted to recreate an effect I’d seen from Returnal, namely the tentacles they use generously throughout the game, both as environment and parts of enemies.
 
-Without any prior knowledge of generating meshes on the GPU, I delved right in and based my experimentation on the fantastic GDC-presentation by Risto Jankkila and Sharman Jagadeesan from 2022.
+Without any prior knowledge of generating meshes on the GPU, I delved right in and based my experimentation on the [fantastic GDC-presentation](https://youtu.be/qbkb8ap7vts?si=NtFHyOyzAOcWyhJn&t=545) by Risto Jankkila and Sharman Jagadeesan from 2022.
 
 The basic concept is to simulate a chain of particles and generate a mesh around it.
 
