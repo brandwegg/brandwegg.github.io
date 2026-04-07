@@ -7,6 +7,7 @@ mainSections = [ "posts" ]
 firebase = { }
 fathomAnalytics = { }
 verification = { }
+defaultBackgroundImage = "cover.png"
 
 [header]
 layout = "fixed-fill-blur"
@@ -19,7 +20,7 @@ showScrollToTop = true
 
 [homepage]
 layout = "background"
-homepageImage = "img/cover.png"
+homepageImage = "cover.png"
 showRecent = true
 showRecentItems = 6
 showMoreLink = true

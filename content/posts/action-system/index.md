@@ -2,11 +2,11 @@
 title: "Callback-centered action buffer"
 summary: "A system that manages actions and input buffers."
 categories: ["Post","Blog",]
-tags: ["post","lorem","ipsum"]
+tags: ["post"]
 #externalUrl: ""
 #showSummary: true
 date: 2026-03-04
-draft: false
+draft: true
 ---
 
 ## Lorem ipsum dolor sit amet

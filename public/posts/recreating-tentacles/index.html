@@ -21,10 +21,10 @@
 
   
   
-    <meta name="description" content="A little summary, how quaint.">
+    <meta name="description" content="For my specialisation at TGE, I decided to recreate an iconic VFX from returnal.">
   
   
-    <meta name="keywords" content="post,lorem,ipsum,">
+    <meta name="keywords" content="post,">
   
   
   
@@ -61,22 +61,20 @@
   <meta property="og:url" content="//localhost:1313/posts/recreating-tentacles/">
   <meta property="og:site_name" content="Johan Röjås">
   <meta property="og:title" content="Recreating the tentacles from returnal">
-  <meta property="og:description" content="A little summary, how quaint.">
+  <meta property="og:description" content="For my specialisation at TGE, I decided to recreate an iconic VFX from returnal.">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2026-03-31T00:00:00+00:00">
     <meta property="article:modified_time" content="2026-03-31T00:00:00+00:00">
     <meta property="article:tag" content="Post">
-    <meta property="article:tag" content="Lorem">
-    <meta property="article:tag" content="Ipsum">
-    <meta property="og:image" content="//localhost:1313/posts/recreating-tentacles/cover.gif">
+    <meta property="og:image" content="//localhost:1313/posts/recreating-tentacles/cover.png">
 
   
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="//localhost:1313/posts/recreating-tentacles/cover.gif">
+  <meta name="twitter:image" content="//localhost:1313/posts/recreating-tentacles/cover.png">
   <meta name="twitter:title" content="Recreating the tentacles from returnal">
-  <meta name="twitter:description" content="A little summary, how quaint.">
+  <meta name="twitter:description" content="For my specialisation at TGE, I decided to recreate an iconic VFX from returnal.">
 
   
   
@@ -240,10 +238,10 @@
     
     "dateModified": "2026-03-31T00:00:00\u002b00:00",
     
-    "keywords": ["post","lorem","ipsum"],
+    "keywords": ["post"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "887"
+    "wordCount": "992"
   }]
   </script>
 
@@ -273,6 +271,10 @@
 
 
 
+
+  
+    
+  
 
 
 
@@ -597,7 +599,7 @@
     
     <img
       id="background-image"
-      src="/posts/recreating-tentacles/cover_hu_ba25dddb34a97771.gif"
+      src="/posts/recreating-tentacles/cover_hu_10cb89d29aed0282.png"
       role="presentation"
       loading="eager"
       decoding="async"
@@ -622,7 +624,7 @@
       integrity="sha512-YFs7lCgY8KtacXrkRhNexGuO5aKtEq5W&#43;5DcKnbOMMOI&#43;f7IvMGNsVvUfj&#43;ooJ13n6EqqcGEz2FKMVvHLGwWPQ=="
       data-blur-id="background-blur"
       data-image-id="background-image"
-      data-image-url="/posts/recreating-tentacles/cover_hu_ba25dddb34a97771.gif"></script>
+      data-image-url="/posts/recreating-tentacles/cover_hu_10cb89d29aed0282.png"></script>
   
       
     
@@ -758,8 +760,8 @@
         <li><a href="#mesh">Mesh</a></li>
       </ul>
     </li>
-    <li><a href="#development">Development</a></li>
-    <li><a href="#evaluation">Evaluation</a></li>
+    <li><a href="#following-entities">Following entities</a></li>
+    <li><a href="#final-product">Final product</a></li>
   </ul>
 </nav>
   </div>
@@ -781,8 +783,8 @@
         <li><a href="#mesh">Mesh</a></li>
       </ul>
     </li>
-    <li><a href="#development">Development</a></li>
-    <li><a href="#evaluation">Evaluation</a></li>
+    <li><a href="#following-entities">Following entities</a></li>
+    <li><a href="#final-product">Final product</a></li>
   </ul>
 </nav>
   </div>
@@ -811,6 +813,7 @@
 </h2>
 <p>For this project I wanted to recreate an effect I’d seen from Returnal, namely the tentacles they use generously throughout the game, both as environment and parts of enemies.</p>
 <p>Without any prior knowledge of generating meshes on the GPU, I delved right in and based my experimentation on the fantastic GDC-presentation by Risto Jankkila and Sharman Jagadeesan from 2022.</p>
+<p>The basic concept is to simulate a chain of particles and generate a mesh around it.</p>
 
 <h2 class="relative group">Breakdown
     <div id="breakdown" class="anchor"></div>
@@ -854,9 +857,15 @@ It does come with complications, however, especially with fast movement, long de
 <li>Gravity: a uniform force downwards</li>
 <li>Look-at-camera: a uniform force towards the camera</li>
 </ul>
-<p><a href="" >example code</a></p>
 <p>The goal with these behaviours was mainly to demonstrate the flexibility that comes with blending behaviours and the capability of adjusting them both interactively and programmatically.</p>
-<p><a href="" >gif of adjusting behaviours and combining them</a></p>
+<figure>
+  <video
+    class="w-full rounded-md aspect-video object-contain"preload="metadata" autoplay loop muted controls playsinline>
+    <source src="/posts/recreating-tentacles/EditorEdit.mov">
+    <p>Your browser cannot play this video. <a href="/posts/recreating-tentacles/EditorEdit.mov">Download video</a>.</p>
+  </video>
+</figure>
+
 
 <h3 class="relative group">Mesh
     <div id="mesh" class="anchor"></div>
@@ -906,22 +915,23 @@ Using the right vector as the starting point, we ensure that all the points will
 </span></span><span class="line"><span class="cl">        <span class="n">rwVertexBuffer</span><span class="p">[</span><span class="n">startVertex</span><span class="o">+</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
-<p>For the indices, it helps visualising the vertices:</p>
-<p><a href="" >insert image</a></p>
-<p>For every ring, we have 5 vertices. For every ring, we offset the count by 5*n, where n is the index of the current particle.
+<p>For the indices, it helps visualising the vertices.
+For every ring, we have 5 vertices. For every ring, we offset the count by 5*n, where n is the index of the current particle.
 Now all we have to do is construct triangles and find a pattern in the data.</p>
-<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-hlsl" data-lang="hlsl"><span class="line"><span class="cl"><span class="c1">// ring1</span>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-hlsl" data-lang="hlsl"><span class="line"><span class="cl"><span class="c1">// verts of the first particle</span>
 </span></span><span class="line"><span class="cl"><span class="mo">0</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span>
-</span></span><span class="line"><span class="cl"><span class="c1">// ring2</span>
-</span></span><span class="line"><span class="cl"><span class="mi">5</span> <span class="mi">6</span> <span class="mi">7</span> <span class="mi">8</span> <span class="mi">9</span></span></span></code></pre></div></div>
+</span></span><span class="line"><span class="cl"><span class="c1">// verts of the second particle</span>
+</span></span><span class="line"><span class="cl"><span class="mi">5</span> <span class="mi">6</span> <span class="mi">7</span> <span class="mi">8</span> <span class="mi">9</span>
+</span></span><span class="line"><span class="cl"><span class="p">...</span></span></span></code></pre></div></div>
 <p>This is one way to construct the quads, with permutations.
 I settled on this because it starts off at 0 and has a nice symmetry.
 Note that the two middle columns are mirrored.</p>
-<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-hlsl" data-lang="hlsl"><span class="line"><span class="cl"><span class="mo">015</span> <span class="mi">516</span>
-</span></span><span class="line"><span class="cl"><span class="mi">126</span> <span class="mi">627</span>
-</span></span><span class="line"><span class="cl"><span class="mi">237</span> <span class="mi">738</span>
-</span></span><span class="line"><span class="cl"><span class="mi">348</span> <span class="mi">849</span>
-</span></span><span class="line"><span class="cl"><span class="mi">409</span> <span class="mi">905</span></span></span></code></pre></div></div>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-hlsl" data-lang="hlsl"><span class="line"><span class="cl"><span class="c1">// Triangle 1 | Triangle 2</span>
+</span></span><span class="line"><span class="cl">     <span class="mo">015</span>          <span class="mi">516</span>
+</span></span><span class="line"><span class="cl">     <span class="mi">126</span>          <span class="mi">627</span>
+</span></span><span class="line"><span class="cl">     <span class="mi">237</span>          <span class="mi">738</span>
+</span></span><span class="line"><span class="cl">     <span class="mi">348</span>          <span class="mi">849</span>
+</span></span><span class="line"><span class="cl">     <span class="mi">409</span>          <span class="mi">905</span></span></span></code></pre></div></div>
 <p>Looking at the left column, the indices are simply counting up from 0.
 The next column and its mirror are simply one higher than that.
 The middle columns are offset by a whole circle of vertices, and the last column one more than that.</p>
@@ -947,28 +957,38 @@ The middle columns are offset by a whole circle of vertices, and the last column
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
 
-<h2 class="relative group">Development
-    <div id="development" class="anchor"></div>
+<h2 class="relative group">Following entities
+    <div id="following-entities" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
-        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#development" aria-label="Anchor">#</a>
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#following-entities" aria-label="Anchor">#</a>
     </span>
     
 </h2>
-<p>My iterative process…</p>
+<p>I upload delta position and rotation for each group of tentacles every frame, then translate and rotate the base of each tentacle in the shader.</p>
+<p>For demonstration purposes, I made a simple system to showcase the runtime capabilities.
+It changes some parameters for all the tentacles based on a global state.
+I made 3 states: idling, preparing, and jumping. In idle, the tentacles pulsate and waver,
+in preparing they pulsate faster and brighter as well as straightening out, and in jumping they calm down.</p>
 
-<h2 class="relative group">Evaluation
-    <div id="evaluation" class="anchor"></div>
+<h2 class="relative group">Final product
+    <div id="final-product" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
-        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#evaluation" aria-label="Anchor">#</a>
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#final-product" aria-label="Anchor">#</a>
     </span>
     
 </h2>
-<p>I could have done…</p>
-<p>If I had more time, I would have focused on…</p>
+<figure>
+  <video
+    class="w-full rounded-md aspect-video object-contain"preload="metadata" autoplay loop muted controls playsinline>
+    <source src="/posts/recreating-tentacles/JumpingBalls.mov">
+    <p>Your browser cannot play this video. <a href="/posts/recreating-tentacles/JumpingBalls.mov">Download video</a>.</p>
+  </video>
+</figure>
+
 
           
           
@@ -1205,30 +1225,6 @@ The middle columns are offset by a whole circle of vertices, and the last column
     
     <footer class="pt-8 max-w-prose print:hidden">
       
-  
-    
-    
-    
-    <div class="pt-8">
-      <hr class="border-dotted border-neutral-300 dark:border-neutral-600">
-      <div class="flex justify-between pt-3">
-        <span class="flex flex-col">
-          
-            <a
-              class="flex text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
-              href="/posts/action-system/">
-              <span class="leading-6">
-                <span class="inline-block rtl:rotate-180">&larr;</span>&ensp;Callback-centered action buffer
-              </span>
-            </a>
-            
-          
-        </span>
-        <span class="flex flex-col items-end">
-          
-        </span>
-      </div>
-    </div>
   
 
 

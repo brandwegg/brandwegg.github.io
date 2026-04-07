@@ -15,38 +15,8 @@
       <pubDate>Tue, 31 Mar 2026 00:00:00 +0000</pubDate>
       
       <guid>//localhost:1313/posts/recreating-tentacles/</guid>
-      <description>A little summary, how quaint.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/posts/recreating-tentacles/cover.gif" />
-    </item>
-    
-    <item>
-      <title>Callback-centered action buffer</title>
-      <link>//localhost:1313/posts/action-system/</link>
-      <pubDate>Wed, 04 Mar 2026 00:00:00 +0000</pubDate>
-      
-      <guid>//localhost:1313/posts/action-system/</guid>
-      <description>A system that manages actions and input buffers.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/posts/action-system/cover.png" />
-    </item>
-    
-    <item>
-      <title>Godrays</title>
-      <link>//localhost:1313/posts/godrays/</link>
-      <pubDate>Sun, 04 Sep 2022 00:00:00 +0000</pubDate>
-      
-      <guid>//localhost:1313/posts/godrays/</guid>
-      <description>Screen-space volumetric godrays.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/posts/godrays/cover.webp" />
-    </item>
-    
-    <item>
-      <title>Masked transparency</title>
-      <link>//localhost:1313/posts/masked-transparency/</link>
-      <pubDate>Sun, 04 Sep 2022 00:00:00 +0000</pubDate>
-      
-      <guid>//localhost:1313/posts/masked-transparency/</guid>
-      <description>Faked transparency using masking of opaque objects.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/posts/masked-transparency/cover.png" />
+      <description>For my specialisation at TGE, I decided to recreate an iconic VFX from returnal.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/posts/recreating-tentacles/cover.png" />
     </item>
     
     <item>

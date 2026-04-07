@@ -2,11 +2,11 @@
 title: "Godrays"
 summary: "Screen-space volumetric godrays."
 categories: ["Post","Blog",]
-tags: ["post","lorem","ipsum"]
+tags: ["post"]
 #externalUrl: ""
 #showSummary: true
-date: 2022-09-04
-draft: false
+date: 2026-01-01
+draft: true
 ---
 
 ## Lorem ipsum dolor sit amet

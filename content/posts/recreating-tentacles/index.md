@@ -1,8 +1,8 @@
 ---
 title: "Recreating the tentacles from returnal"
-summary: "A little summary, how quaint."
+summary: "For my specialisation at TGE, I decided to recreate an iconic VFX from returnal."
 categories: ["Post","Blog",]
-tags: ["post","lorem","ipsum"]
+tags: ["post"]
 #externalUrl: ""
 #showSummary: true
 date: 2026-03-31
@@ -14,7 +14,9 @@ For this project I wanted to recreate an effect I’d seen from Returnal, namely
 
 Without any prior knowledge of generating meshes on the GPU, I delved right in and based my experimentation on the fantastic GDC-presentation by Risto Jankkila and Sharman Jagadeesan from 2022.
 
-## Breakdown 
+The basic concept is to simulate a chain of particles and generate a mesh around it.
+
+## Breakdown
 
 ### Setup
 Fundamentally, there are 4 buffers in play. Two for the particles, one for the vertices and one for the indices. 
@@ -31,11 +33,15 @@ The particles follow a combination of basic behaviours that are applied to the p
 * Gravity: a uniform force downwards
 * Look-at-camera: a uniform force towards the camera
 
-[example code]()
-
 The goal with these behaviours was mainly to demonstrate the flexibility that comes with blending behaviours and the capability of adjusting them both interactively and programmatically.
 
-[gif of adjusting behaviours and combining them]()
+{{< video
+src="EditorEdit.mov"
+loop=true
+muted=true
+autoplay=true
+playsinline=true
+>}}
 
 ### Mesh
 
@@ -87,18 +93,16 @@ void submit_ring_v(uint particleId, float r, float scale, float percentage)
 
 ```
 
-For the indices, it helps visualising the vertices:
-
-[insert image]()
-
+For the indices, it helps visualising the vertices.
 For every ring, we have 5 vertices. For every ring, we offset the count by 5*n, where n is the index of the current particle. 
 Now all we have to do is construct triangles and find a pattern in the data.
 
 ```hlsl
-// ring1
+// verts of the first particle
 0 1 2 3 4
-// ring2
+// verts of the second particle
 5 6 7 8 9
+...
 ```
 
 
@@ -106,11 +110,12 @@ This is one way to construct the quads, with permutations.
 I settled on this because it starts off at 0 and has a nice symmetry. 
 Note that the two middle columns are mirrored.
 ```hlsl
-015 516
-126 627
-237 738
-348 849
-409 905
+// Triangle 1 | Triangle 2
+     015          516
+     126          627
+     237          738
+     348          849
+     409          905
 ```
 
 Looking at the left column, the indices are simply counting up from 0. 
@@ -141,10 +146,19 @@ void submit_ring_i(uint particleId)
 }
 ```
 
-## Development
-My iterative process…
+## Following entities
+I upload delta position and rotation for each group of tentacles every frame, then translate and rotate the base of each tentacle in the shader.
 
-## Evaluation
-I could have done…
+For demonstration purposes, I made a simple system to showcase the runtime capabilities. 
+It changes some parameters for all the tentacles based on a global state. 
+I made 3 states: idling, preparing, and jumping. In idle, the tentacles pulsate and waver, 
+in preparing they pulsate faster and brighter as well as straightening out, and in jumping they calm down.
 
-If I had more time, I would have focused on…
+## Final product
+{{< video
+src="JumpingBalls.mov"
+loop=true
+muted=true
+autoplay=true
+playsinline=true
+>}}
