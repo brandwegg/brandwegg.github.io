@@ -4,11 +4,6 @@ pageRef = "posts"
 weight = 10
 
 [[main]]
-name = "Tags"
-pageRef = "tags"
-weight = 20
-
-[[main]]
 name = "About me"
 pageRef = "about-me"
 identifier = "zrHXf5VWLq"
