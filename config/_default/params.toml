@@ -17,6 +17,7 @@ showCopyright = true
 showThemeAttribution = true
 showAppearanceSwitcher = true
 showScrollToTop = true
+showMenu = false
 
 [homepage]
 layout = "background"
