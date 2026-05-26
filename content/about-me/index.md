@@ -7,3 +7,5 @@ What peaks my interest the most is graphics; from architecture and pipeline to V
 
 I begun coding in highschool in C# and after graduation C and C++ caught my interest because of its wide use and the wealth of online resources, along with the control. 
 To this day I remember the amazement I felt when I found out about pointer casts.
+
+[Download my CV](/Johan_Rojas_CV.pdf)
