@@ -15,12 +15,64 @@ muted=true
 autoplay=true
 playsinline=true
 >}}
-## Intro
-For this project I wanted to recreate an effect I’d seen from Returnal, namely the tentacles they use generously throughout the game, both as environment and parts of enemies.
+## Context
 
-Without any prior knowledge of generating meshes on the GPU, I delved right in and based my experimentation on the [fantastic GDC-presentation](https://youtu.be/qbkb8ap7vts?si=NtFHyOyzAOcWyhJn&t=545) by Risto Jankkila and Sharman Jagadeesan from 2022.
+This project is my “specialization” from TGA. 
+It’s a personal portfolio piece developed during one of our courses. 
+The time allotted was approximately 80h. 
+We were free to choose any project as long as we and the teachers deemed it a reasonable scope.
 
-The basic concept is to simulate a chain of particles and generate a mesh around it.
+When choosing, I remembered a video I’d seen before I started that has left a quite strong impression on me. 
+It was a [GDC-talk](https://youtu.be/qbkb8ap7vts?si=NtFHyOyzAOcWyhJn&t=545) from Risto Jankkila and Sharman Jagadeesan of Housemarqe, 
+in which they describe their fascinating VFX pipeline. 
+In particular I was intrigued by the tentacles they use generously throughout the game, 
+as both environment and parts of enemies. In the video it is explained how they have a very 
+dynamic particle system that they use for different simulations, amongst other things the tentacles.
+
+## Execution
+
+Without any prior knowledge of generating meshes on the GPU, 
+I set up some fundamental components that I knew had to be present, such as buffers for particles and vertices. 
+I decided to start with the most basic approach I could think of, with the presentation as a guide.
+
+In order to verify the particle buffers and basic logic I started out by creating chains of particles visualized by points,
+progressing to create triangles between the points. 
+Then I created a tube around the particles, rotating points around the world up vector. 
+For each pair of particles I generated triangles between their associated points.
+
+Next up, I added some movement behaviour to the particles to give some tentacle feel to them. 
+This also made the next problem very visible: the rotation of the tube.
+
+Each point on a curve has its “forward” pointing in the direction of the tangent to the curve at its position. 
+I approximated that to the direction from the previous particle in the chain to the next, which seems to work fine. 
+Determining the point's rotational alignment along that line is trickier, but important. 
+If the points are not well-aligned in rotation around the curve, 
+they will twist the vertices relative to one another and thus deform the triangles. 
+The solution was to start from the rotation of the base of the tube and align every particle with the parent’s orientation.
+
+This yielded a right vector I could rotate around the forward to determine the vertex positions.
+
+I noticed that the shader ran a little slow, 
+taking about 7ms to solve 15k tentacles and ~3M triangles on the 2080 I tested on, 
+so it was time for optimization.
+
+Previously I had naively generated each band of triangles separately, 
+but since each band reuses half of the vertices from the previous, I could easily cache that, 
+which improved the performance a little, to roughly 5-6ms. Then I tried, at the suggestion of my teacher, 
+to “remove” a loop I had to evaluate the triangles of the segment. 
+The way I solved that was by turning the rotational triangle resolution constant 
+and unrolling the loop which brought the total time down to 3ms, a significant improvement. 
+I was still not happy, however. What I assumed were the biggest issues remaining were that 
+I had to calculate the vertices for two particles for each loop of triangles, as well as the seemingly 
+unnecessary process of writing each vertex 6 times to the triangle buffer, 
+one for each triangle they’re a part of. Both of these issues can be solved using an index buffer. 
+I could also clean up the code a considerable amount since the shader calculates a 
+single particle and one loop of vertices corresponding to it. 
+The index buffer only has to be calculated once since it’s static most of the time, 
+so it could be excluded from the shader entirely. 
+With these changes the time was down to below 1ms, with margin.
+
+[](https://addimagehere)
 
 ## Breakdown
 
@@ -162,3 +214,12 @@ muted=true
 autoplay=true
 playsinline=true
 >}}
+
+## Evaluation
+
+I would have liked to make a more realistic physics model for the simulation. 
+Currently they behave as if they were dispensed in viscous fluid, without proper perseverance of momentum. 
+It looks believable enough for most applications, 
+but it breaks down a little when they’re rotating around a point or the attachment point moves fast, 
+especially with long chains.
+
