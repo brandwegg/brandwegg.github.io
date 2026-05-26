@@ -51,13 +51,6 @@ showAuthorsBadges = false
 showWordCount = false
 showSummary = true
 sharingLinks = [
-  "linkedin",
-  "twitter",
-  "whatsapp",
-  "pinterest",
-  "reddit",
-  "facebook",
-  "email"
 ]
 layoutBackgroundBlur = true
 showAuthorBottom = true
