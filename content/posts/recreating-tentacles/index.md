@@ -8,7 +8,13 @@ tags: ["post"]
 date: 2026-03-31
 draft: false
 ---
-
+{{< video
+src="EditorEdit.mov"
+loop=true
+muted=true
+autoplay=true
+playsinline=true
+>}}
 ## Intro
 For this project I wanted to recreate an effect I’d seen from Returnal, namely the tentacles they use generously throughout the game, both as environment and parts of enemies.
 
@@ -35,13 +41,7 @@ The particles follow a combination of basic behaviours that are applied to the p
 
 The goal with these behaviours was mainly to demonstrate the flexibility that comes with blending behaviours and the capability of adjusting them both interactively and programmatically.
 
-{{< video
-src="EditorEdit.mov"
-loop=true
-muted=true
-autoplay=true
-playsinline=true
->}}
+
 
 ### Mesh
 
