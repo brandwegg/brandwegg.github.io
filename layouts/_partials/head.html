@@ -1,0 +1,6 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title site.Title }}{{ end }}</title>
+{{/*{{ partial "head/css.html" (dict "page" . "style" "css/header.css") }}*/}}
+{{/*{{ partial "head/css.html" (dict "page" . "style" "css/footer.css") }}*/}}
+{{ partialCached "head/js.html" (dict "page" . "script" "js/main.js") }}

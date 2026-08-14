@@ -2,7 +2,7 @@
 title: "Masked transparency"
 summary: "Faked transparency using masking of opaque objects."
 categories: ["Post","Blog",]
-tags: ["post"]
+tags: []
 #externalUrl: ""
 #showSummary: true
 date: 2026-01-01

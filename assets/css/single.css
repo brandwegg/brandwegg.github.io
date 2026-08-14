@@ -1,0 +1,185 @@
+@import "code_styles/monokai-custom.css";
+
+main{
+    isolation: isolate;
+    position: relative; /* or any positioned value */
+    z-index: 0;          /* ensures parent forms a stacking context */
+}
+
+.content{
+    /*WTF, who wrote this fake language*/
+    position:relative;
+    z-index: 0;
+
+    /*position: relative;*/
+    /*max-width: 40rem;*/
+    /*offset-position: center;*/
+    /*margin-left: calc(50% - 20rem);*/
+    padding-bottom: 5vh;
+    /*margin-top: 100vh;*/
+    background: var(--carbon);
+    display: grid;
+    grid-template-columns: 1fr min(40rem,100%) 1fr;
+    grid-auto-rows: auto;
+    scroll-timeline-name: content-timeline;
+    > * {
+        grid-column: 2/3;
+    }
+    > *:not(:is(.media-container)){
+        margin-left: 2rem;
+        margin-right: 2rem;
+    }
+}
+
+@keyframes show-content {
+     50%{
+         content-visibility: visible;
+     }
+ }
+
+@keyframes show-content-fade {
+     0%{
+         content-visibility: visible;
+         opacity: 100;
+     }
+
+    50%{
+        opacity:100;
+    }
+
+    90%{
+        opacity:0;
+    }
+
+    100%{
+        content-visibility: visible;
+        opacity: 0;
+    }
+ }
+
+.media-container{
+    content-visibility: hidden;
+    animation: show-content linear both;
+    animation-range: cover;
+    animation-timeline: view(-20svh);
+
+    margin-top: 1rem;
+    width: 100%;
+    height: auto;
+    aspect-ratio: auto 16/9;
+    object-fit: cover;
+}
+
+img, video {
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0;
+    opacity: 100;
+
+    /*visibility: hidden;*/
+    /*animation: --show linear both;*/
+    /*animation-range: cover;*/
+    /*animation-timeline: view();*/
+}
+
+.bg{
+    position: fixed;
+    height: 100svh;
+    top:0;
+    z-index: -1;
+    max-width: 100svw;
+}
+
+.pre{
+    content-visibility: hidden;
+    animation: show-content-fade linear both;
+    animation-range: cover;
+    animation-timeline: view();
+    /*transition-behavior: allow-discrete;*/
+    z-index: -1;
+    /*opacity: 100;*/
+    height: 100svh;
+}
+
+.meta{
+    position: absolute;
+    top: 0;
+    display:grid;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    /*grid-template-rows: auto 20rem auto;*/
+    /*justify-items: center;*/
+    height: 100%;
+    width: 100%;
+    grid-row-gap: 3rem;
+
+    > * {
+        background-color: #2C2C2C6C;
+        backdrop-filter: blur(3px);
+        padding: 1rem;
+    }
+
+    > h1,h2 {
+        margin-top: 0;
+    }
+}
+
+/*.highlight{*/
+/*    overflow-x: auto;*/
+/*    margin-top: 1.3rem;*/
+/*}*/
+
+/*code{*/
+/*    max-width: 100%;*/
+/*    !*text-wrap-mode: wrap;*!*/
+/*    !*text-wrap-style: pretty;*!*/
+/*}*/
+
+main {
+    h1, h2, h3, h4, h5, h6 {
+        font-family: var(--font-mono);
+        /*font-size: 0.6rem;*/
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+        text-decoration: none;
+        /*padding: 8px 14px;*/
+        /*border-bottom: 1px solid transparent;*/
+        /*border-left: 3px solid transparent;*/
+        /*border-color: var(--neon-chartreuse);*/
+    }
+
+    h1, h2, h3, h4, h5, h6, p {
+        margin-top: 1.5em;
+    }
+
+    p {
+        font-family: var(--font-sans);
+        line-height: 1.7em;
+        color: var(--aluminium);
+        /*max-width: 40rem;*/
+    }
+}
+
+
+
+/*time*/
+/*{*/
+/*    text-transform: uppercase;*/
+/*    color: var(--neon-chartreuse);*/
+
+/*    align-items: center;*/
+/*    display: flex;*/
+/*}*/
+
+/*time::before {*/
+/*    content: '';*/
+/*    display: inline-block;*/
+/*    width: 24px;*/
+/*    height: 1px;*/
+/*    background: var(--neon-chartreuse);*/
+/*    margin-right: 1em;*/
+/*}*/
+

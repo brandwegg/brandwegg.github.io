@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="{{ site.Language.Locale }}" dir="{{ or site.Language.Direction `ltr` }}">
+<head>
+  <link rel="preload" href="/css/core.css" as="style">
+  {{ partial "head/css.html" (dict "page" . "style" "css/core.css") }}
+  {{ partial "head.html" . }}
+</head>
+<body>
+  <header class="global-header">
+    {{ partial "header.html" . }}
+  </header>
+  <main>
+    {{ block "main" . }}{{ end }}
+  </main>
+  <footer>
+    {{ partial "footer.html" . }}
+  </footer>
+
+  <!-- About Modal -->
+  <div id="about" class="modal-overlay">
+    <a href="" class="modal__close" aria-label="Close">&times;</a>
+    <div class="modal__content">
+      <p class="modal__label">Profile</p>
+      <h2 class="modal__heading">About<br>me</h2>
+      <p class="modal__text">
+        <strong>Currently</strong>, I am a student at The Game Assembly, looking for internship.
+        The aspects that makes me love games as a developer are the creativity it allows a programmer and its interactive nature.
+        What peaks my interest the most is engine work: architecture, systems, pipelines, data flow, algorithms and more. I find graphics programming extra intriguing because of this.
+        I also find gameplay intriguing, with the challenge of bridging the gap between the interactive world and the hands of the player.
+      </p>
+      <p class="modal__text">
+        I began coding in high school in C# and after graduation C and C++ caught my interest because of its wide use and the wealth of online resources, along with the control it offers.
+        To this day I remember the amazement I felt when I found out about pointer casts.
+      </p>
+{{/*      <hr class="modal__divider">*/}}
+{{/*      <p class="modal__text">*/}}
+{{/*        <strong>Hard Skills</strong><br>*/}}
+{{/*        Engine Programming / Gameplay Programming / Graphics Programming<br>*/}}
+{{/*        <strong>Soft Skills</strong><br>*/}}
+{{/*        Collaboration / Creative Problem-Solving*/}}
+{{/*      </p>*/}}
+      <hr class="modal__divider">
+      <a target="_blank" href="/pdf/Johan_Rojas_CV.pdf" rel="noopener noreferrer">Download my CV</a>
+    </div>
+  </div>
+
+  <!-- Contact Modal -->
+  <div id="contact" class="modal-overlay">
+    <a href="" class="modal__close" aria-label="Close">&times;</a>
+    <div class="modal__content">
+      <p class="modal__label">Connect</p>
+      <h2 class="modal__heading">Get In<br>Touch</h2>
+      <p class="modal__text">Currently looking for internship autumn 2026.</p>
+      <hr class="modal__divider">
+      <div class="modal__contact-grid">
+        <div class="modal__contact-item">
+          <p class="modal__contact-label">Email</p>
+          <p class="modal__contact-value"><a href="mailto:johan.rojas@branddesign.se">johan.rojas@branddesign.se</a></p>
+        </div>
+        <div class="modal__contact-item">
+          <p class="modal__contact-label">Phone</p>
+          <p class="modal__contact-value"><a href="tel:+46707657218">+46 70 765 72 18</a></p>
+        </div>
+        <div class="modal__contact-item">
+          <p class="modal__contact-label">Linkedin</p>
+          <p class="modal__contact-value"><a href="https://www.linkedin.com/in/johan-röjås">Johan Röjås</a></p>
+        </div>
+        <div class="modal__contact-item">
+          <p class="modal__contact-label">Location</p>
+          <p class="modal__contact-value">Stockholm, SE</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {{ if .Store.Get "hasMermaid" }}
+    <script type="module">
+      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs';
+      mermaid.initialize({ startOnLoad: true });
+    </script>
+  {{ end }}
+</body>
+</html>

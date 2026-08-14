@@ -1,0 +1,46 @@
+﻿{{- $page := . }}
+
+<div class="details">
+    <p inert class="details__category">
+        {{with .GetTerms "tags"}}
+            {{- range first ( sub (. | len) 1) . }}
+                {{ .LinkTitle }},
+            {{- end }}
+            {{range last 1 .}}
+                {{ .LinkTitle }}
+            {{- end }}
+        {{- end }}
+    </p>
+{{/*    <h3 inert class="details__title">{{ replace .Title " " "<br>" | safeHTML}}</h3>*/}}
+    <h3 inert class="details__title">{{ .Title }}</h3>
+    <div inert class="details__meta">
+        <div class="details__meta-item">
+            <span class="details__meta-label">Studio</span>
+            <p class="details__meta-value">
+              {{ .Params.studio }}
+            </p>
+        </div>
+        <div class="details__meta-item">
+            <span class="details__meta-label">Year</span>
+            <p class="details__meta-value">
+              {{.Date.Year}}
+            </p>
+        </div>
+        <div class="details__meta-item">
+            <span class="details__meta-label">Role</span>
+            <p class="details__meta-value">
+              {{ .Params.role }}
+            </p>
+        </div>
+    </div>
+    <p inert class="details__description">{{ .Summary }}</p>
+    <a href="{{ .RelPermalink }}" class="btn-view">
+        <div inert>
+            View Project
+        </div>
+
+        <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
+        </svg>
+    </a>
+</div>

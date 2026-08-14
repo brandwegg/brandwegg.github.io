@@ -1,0 +1,114 @@
+﻿{{$page_register := "codeblock_registry"}}
+{{$page_init := "codeblock_registry_has_been_initialized"}}
+
+{{ $keyword_id := "k"}}
+{{ $class_id := "nc"}}
+{{ $enum_value_id := "ev"}}
+
+{{ $keywords := slice}}
+{{ $classes := slice}}
+{{ $enum_values := slice}}
+
+{{/*Get the registered classes from the store, or init with defaults if there are none*/}}
+{{/*{{if .Page.Store.Get $page_register}}*/}}
+{{/*        {{partial "debug/p-log.html" "found"}}*/}}
+{{/**/}}
+{{/*    {{with .Page.Store}}*/}}
+{{/*        {{$keywords = .Get $keyword_id}}*/}}
+{{/*        {{$classes = .Get $class_id}}*/}}
+{{/*        {{$enum_values = .Get $enum_value_id}}*/}}
+{{/*    {{end}}*/}}
+{{/*{{else}}*/}}
+{{/*        {{partial "debug/p-log.html" "not found"}}*/}}
+{{/**/}}
+{{/*    {{ $keywords = (slice "true" "false" "size_t" "uint8_t" "uint16_t" "uint32_t" "uint64_t")}}*/}}
+{{/*    {{ $classes = (slice "function" "unordered_map" "array" "vector")}}*/}}
+{{/*    {{ $enum_values = slice}}*/}}
+{{/*{{end}}*/}}
+
+{{/*{{with (.Page.Store.Get $page_register)}}*/}}
+{{/*    {{partial "debug/p-log.html" "found"}}*/}}
+{{/*    {{$keywords = .Get $keyword_id}}*/}}
+{{/*    {{$classes = .Get $class_id}}*/}}
+{{/*    {{$enum_values = .Get $enum_value_id}}*/}}
+{{/*{{else}}*/}}
+{{/*    {{partial "debug/p-log.html" "not found"}}*/}}
+    {{ $keywords = (slice "true" "false" "size_t" "uint8_t" "uint16_t" "uint32_t" "uint64_t" "if")}}
+    {{ $classes = (slice "function" "unordered_map" "array" "vector")}}
+    {{ $enum_values = slice}}
+{{/*{{end}}*/}}
+
+
+{{with (.Page.Store.Get $page_register)}}
+    {{$keywords = union $keywords (index . $keyword_id)}}
+    {{$classes = union $classes (index . $class_id)}}
+    {{$enum_values = union $enum_values (index . $enum_value_id)}}
+{{end}}
+
+{{if .Attributes.classes }}
+    {{ $classes = union $classes (split .Attributes.classes " ")}}
+{{end}}
+
+{{if .Attributes.enum_values }}
+    {{ $enum_values = union $enum_values (split .Attributes.enum_values " ")}}
+{{end}}
+
+
+{{ $registry := (dict "nc" $classes "k" $keywords "ev" $enum_values)}}
+{{.Page.Store.Set $page_register $registry}}
+
+
+{{ $result := transform.HighlightCodeBlock . }}
+{{ $resultString := $result.Wrapped}}
+
+{{ range $cssClass, $collection := $registry }}
+    {{ range $collection }}
+        {{/*    {{partial "debug/p-log.html" .}}*/}}
+        {{ $pattern := printf `class=\"([^<]+)\">%s<` . }}
+        {{ $replacement := printf `class="%s">%s<` $cssClass . }}
+        {{ $resultString = replaceRE $pattern $replacement $resultString }}
+    {{ end }}
+{{ end }}
+
+{{$resultString | safeHTML}}
+
+
+{{/*{{ $classes := slice}}*/}}
+{{/*{{ $keywords := slice "struct" "class" "enum" "using"}}*/}}
+{{/*{{ $name_qualifier := `[^a-zA-Z0-9_]` }}*/}}
+{{/**/}}
+{{/*{{ $splitInner := split (replace .Inner "\r\n" " ") " "}}*/}}
+{{/*{{ $count := len $splitInner}}*/}}
+{{/**/}}
+{{/*{{range $count}}*/}}
+{{/*    {{$element := (index $splitInner .)}}*/}}
+{{/*    {{if in $keywords $element }}*/}}
+{{/*        {{$name := replaceRE $name_qualifier "" (index $splitInner (add . 1))}}*/}}
+{{/*        {{if in $classes $name }}*/}}
+{{/*        {{else}}*/}}
+{{/*            {{$classes = $classes | append $name}}*/}}
+{{/*            {{partial "debug/p-log.html" $name}}*/}}
+{{/*        {{end}}*/}}
+{{/*    {{end}}*/}}
+{{/*{{end}}*/}}
+
+{{/*{{ range $classes }}*/}}
+{{/*    {{partial "debug/p-log.html" .}}*/}}
+{{/*    {{ $pattern := printf `class=\"([^<]+)\">%s<` . }}*/}}
+{{/*    {{ $replacement := printf `class="%s">%s<` "nc" . }}*/}}
+{{/*    {{ $resultString = replaceRE $pattern $replacement $resultString }}*/}}
+{{/*{{ end }}*/}}
+{{/**/}}
+{{/*{{ range $keywords }}*/}}
+{{/*    {{partial "debug/p-log.html" .}}*/}}
+{{/*    {{ $pattern := printf `class=\"([^<]+)\">%s<` . }}*/}}
+{{/*    {{ $replacement := printf `class="%s">%s<` "k" . }}*/}}
+{{/*    {{ $resultString = replaceRE $pattern $replacement $resultString }}*/}}
+{{/*{{ end }}*/}}
+{{/**/}}
+{{/*{{ range $enum_values }}*/}}
+{{/*    */}}{{/*    {{partial "debug/p-log.html" .}}*/}}
+{{/*    {{ $pattern := printf `class=\"([^<]+)\">%s<` . }}*/}}
+{{/*    {{ $replacement := printf `class="%s">%s<` "ev" . }}*/}}
+{{/*    {{ $resultString = replaceRE $pattern $replacement $resultString }}*/}}
+{{/*{{ end }}*/}}

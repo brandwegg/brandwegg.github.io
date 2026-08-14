@@ -1,0 +1,23 @@
+﻿{{ define "main"  }}
+    <div>
+        {{/*TODO: section of pages with subpages (such as assignments, the engine etc)*/}}
+        {{ range site.RegularPages }}
+            <article class = "panel">
+                <div inert class="panel__bg">
+                    {{- $file := .Resources.GetMatch "bg.*" }}
+                    {{- $type := $file.MediaType.MainType}}
+                    {{if eq $type "image" }}
+                        <img src="{{ $file.RelPermalink }}" alt="{{ .Title }}" class="panel__img" loading="lazy">
+                    {{else if eq $type "video" }}
+                        <video  autoplay muted loop class="panel__video" loading="lazy">
+                            <source src="{{ $file.RelPermalink }}" type="video/mp4" >
+                        </video>
+                    {{- end}}
+                </div>
+
+                {{partial "details.html" .}}
+
+            </article>
+        {{ end }}
+    </div>
+{{ end }}

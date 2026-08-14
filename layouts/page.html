@@ -1,0 +1,35 @@
+{{ define "main" }}
+  {{ partial "head/css.html" (dict "page" . "style" "css/single.css") }}
+
+  <div class="pre">
+    {{with .Resources.GetMatch "bg.*"}}
+      {{- $file := . }}
+      {{- $mainType := $file.MediaType.MainType}}
+      {{- $type := $file.MediaType.Type}}
+      {{if eq $mainType "image" }}
+        <img src="{{ $file.RelPermalink }}" alt="{{ .Title }}" loading="lazy" class="bg">
+      {{else if eq $mainType "video" }}
+        <video  autoplay muted loop loading="lazy" class="bg">
+          <source src="{{ $file.RelPermalink }}">
+        </video>
+      {{- end}}
+    {{- end}}
+
+    <div class="meta">
+      <h1>{{ .Title }}</h1>
+
+  {{/*    {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}*/}}
+  {{/*    {{ $dateHuman := .Date | time.Format ":date_long" }}*/}}
+  {{/*    <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>*/}}
+      <div class="tableOfContents">
+        <h2>Table of contents</h2>
+        <div class="list">{{.TableOfContents}}</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content">
+    {{ .Content }}
+{{/*    {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}*/}}
+  </div>
+{{ end }}

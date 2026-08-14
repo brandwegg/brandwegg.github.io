@@ -1,0 +1,28 @@
+{{ $fileType := (index (split .style ".") 1)}}
+
+{{- with resources.Get .style }}
+  {{- $opts := dict
+    "minify" (cond hugo.IsDevelopment false true)
+    "sourceMap" (cond hugo.IsDevelopment "linked" "none")
+  }}
+
+  {{ $css := "" }}
+
+  {{ if eq $fileType "scss" }}
+    {{ $css = . | css.Sass $opts }}
+  {{ else if eq $fileType "css" }}
+    {{ $css = . | css.Build $opts }}
+  {{else}}
+    {{partial "/debug/p-log.html" "No processor defined for style type"}}
+  {{ end }}
+
+  {{- with . | css.Build $opts }}
+    {{- if hugo.IsDevelopment }}
+      <link rel="stylesheet" href="{{ .RelPermalink }}">
+    {{- else }}
+      {{- with . | fingerprint }}
+        <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+      {{- end }}
+    {{- end }}
+  {{- end }}
+{{- end }}

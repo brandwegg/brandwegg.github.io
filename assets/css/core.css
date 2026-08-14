@@ -1,0 +1,132 @@
+﻿@import "footer.css";
+@import "header.css";
+
+/* ============================================
+   COMPRESSION — CSS-Only Kinetic Portfolio
+   TM-620
+   https://templatemo.com/tm-620-compression
+   Design: TemplateMo
+   ============================================ */
+
+/*NOTE: no widespread support. TODO at a later date.*/
+/*@function --pixel-count(--val <length>){*/
+/*    result: tan(atan2(var(--val),1px));*/
+/*}*/
+/*@function --transparent(--color <color>, --alpha <number>: 0.8) returns <color> {*/
+/*    result: oklch(from var(--color) l c h / var(--alpha));*/
+/*}*/
+
+/*@property --e-width{*/
+/*    syntax: '<number>';*/
+/*    inherits: false;*/
+/*    initial-value: tan(atan2(100cqw,1px));*/
+/*}*/
+/*@property --e-height{*/
+/*    syntax: '<number>';*/
+/*    inherits: false;*/
+/*    initial-value: tan(atan2(100cqh,1px));*/
+/*}*/
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*TODO: make proper color scheme. (Rename)*/
+/*TODO: Add variables for each common measurement (such as paddings, font-sizes, etc)*/
+/*TODO: Use above-mentioned variables to calculate the size of certain elements, such as the header, for convenience)*/
+/*TODO: Use the header to offset the filter on home page and set the margin on the )*/
+
+:root {
+    --off-white: #F0F0F0;
+    --carbon: #1A1A1A;
+    --graphite: #2C2C2C;
+    --steel: #4A4A4A;
+    --ash: #6B6B6B;
+    --aluminium: #ABABAB;
+    --neon-chartreuse: #DFFF00;
+    --seam: #111111;
+    --font-sans: 'Anton', sans-serif;
+    --font-mono: 'Space Mono', monospace;
+    --ease-heavy: cubic-bezier(0.77, 0, 0.175, 1);
+    --ease: cubic-bezier(0.28, 0.13, 0.23, 1);
+    --duration: 0.4s;
+    --s-width: tan(atan2(100cqw,1px));
+    --s-height: tan(atan2(100cqh,1px));
+    --ratio: calc(var(--s-width) / var(--s-height));
+    --narrow-threshold: 35rem;
+}
+
+html {
+    font-size: 16px;
+    font-family: var(--font-mono);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /*overflow-x: hidden;*/
+
+/*    scrollbar*/
+    scrollbar-width: thin;
+    scrollbar-color: var(--steel) transparent;
+
+    ::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: var(--steel);
+        border-radius: 0;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: var(--ash);
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-sans);
+}
+
+body {
+    background: var(--carbon);
+    color: var(--off-white);
+    /*overflow: hidden;*/
+    /*overflow-x: hidden;*/
+}
+
+html,body,main{
+    height: 100%;
+    width: 100%;
+}
+
+a{
+    text-decoration: none;
+    color: var(--neon-chartreuse);
+}
+
+ul{
+    list-style: none inside;
+}
+
+li {
+
+    color: var(--aluminium);
+    font-family: var(--font-sans);
+
+    margin-top: 1em;
+
+    >a{
+        padding-left: 0.5em;
+        border-left: 0.15em solid var(--neon-chartreuse);
+    }
+
+    > ul,ol,dl{
+        padding-left: calc(0.5em + 0.35em);
+    }
+}

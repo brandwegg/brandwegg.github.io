@@ -1,0 +1,63 @@
+/* ============================================
+   COMPRESSION — CSS-Only Kinetic Portfolio
+   TM-620
+   https://templatemo.com/tm-620-compression
+   Design: TemplateMo
+   ============================================ */
+
+/* --- BOTTOM STRIP --- */
+.global-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 36px;
+    pointer-events: none;
+    /*background: linear-gradient(*/
+    /*        0deg,*/
+    /*        rgba(26, 26, 26, 0.6) 0%,*/
+    /*        transparent 100%*/
+    /*);*/
+}
+
+.footer__credit {
+    font-size: 0.55rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(240, 240, 240, 0.3);
+    pointer-events: auto;
+}
+
+.footer__credit a {
+    color: rgba(240, 240, 240, 0.5);
+    text-decoration: none;
+}
+
+.footer__scroll-hint {
+    font-size: 0.55rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(240, 240, 240, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer__scroll-hint::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 1px;
+    background: rgba(240, 240, 240, 0.3);
+}
+
+@media (max-width: 35rem) {
+    .global-footer {
+        display: none;
+    }
+}
+

@@ -1,0 +1,355 @@
+
+/* ============================================
+   COMPRESSION — CSS-Only Kinetic Portfolio
+   TM-620
+   https://templatemo.com/tm-620-compression
+   Design: TemplateMo
+   ============================================ */
+
+@property --header-height {
+  syntax: '<length>';
+  inherits: true;
+  initial-value: 0;
+}
+
+.global-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  /*height: 140px;*/
+  backdrop-filter: blur(3px);
+  background-color: rgba(26, 26, 26, 0.3);
+  /*background: linear-gradient(*/
+  /*        180deg,*/
+  /*        rgba(26, 26, 26, 0.9) 0%,*/
+  /*        rgba(26, 26, 26, 0.5) 40%,*/
+  /*        rgba(26, 26, 26, 0.15) 70%,*/
+  /*        transparent 100%*/
+  /*);*/
+  pointer-events: none;
+}
+
+.global-header:after {
+  --header-height: 100cqh;
+}
+
+.logo {
+  align-self: center;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--off-white);
+  pointer-events: auto;
+  text-decoration: none;
+
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  grid-column-gap: 0.5rem;
+
+  > img{
+    width: auto;
+    height: 2em;
+  }
+}
+
+.logo span {
+  color: var(--neon-chartreuse);
+  font-weight: 400;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  pointer-events: auto;
+}
+
+.nav a {
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(240, 240, 240, 0.5);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+
+  border: 1px solid transparent;
+  transition:
+          color 0.3s var(--ease),
+          border-color 0.3s var(--ease);
+}
+
+
+
+.nav a:hover {
+  color: var(--neon-chartreuse);
+  border-color: rgba(223, 255, 0, 0.3);
+}
+
+/* ===========================================
+   CSS-ONLY MODALS (:target)
+   =========================================== */
+.modal-overlay {
+  p{
+    font-family: var(--font-mono);
+  }
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(26, 26, 26, 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+          opacity 0.5s var(--ease),
+          visibility 0s linear 0.5s;
+}
+
+.modal-overlay:target {
+  /*:has(> &) {*/
+  /*  overflow: auto;*/
+  /*  overscroll-behavior: contain;*/
+
+  /*  scroll-timeline: auto;*/
+  /*}*/
+
+  opacity: 1;
+  visibility: visible;
+  transition:
+          opacity 0.5s var(--ease),
+          visibility 0s linear 0s;
+}
+
+.modal-overlay:target .modal__content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.modal__close {
+  position: absolute;
+  top: 28px;
+  right: 36px;
+  z-index: 10;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: var(--off-white);
+  font-size: 1.4rem;
+  border: 1px solid var(--steel);
+  border-radius: 0;
+  transition:
+          border-color 0.3s var(--ease),
+          color 0.3s var(--ease);
+}
+
+.modal__close:hover {
+  border-color: var(--neon-chartreuse);
+  color: var(--neon-chartreuse);
+}
+
+.modal__content {
+  overscroll-behavior: contain;
+  max-width: 680px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  padding: 60px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+          opacity 0.5s var(--ease) 0.1s,
+          transform 0.5s var(--ease) 0.1s;
+
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+  /* Chrome, Safari and Opera */
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.modal__label {
+  font-size: 0.6rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--neon-chartreuse);
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.modal__label::before {
+  content: '';
+  display: inline-block;
+  width: 32px;
+  height: 1px;
+  background: var(--neon-chartreuse);
+}
+
+.modal__heading {
+  font-family: var(--font-sans);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  text-transform: uppercase;
+  color: var(--off-white);
+  line-height: 0.95;
+  margin-bottom: 36px;
+}
+
+.modal__text {
+  font-size: 0.8rem;
+  line-height: 1.9;
+  color: rgba(240, 240, 240, 0.6);
+  margin-bottom: 24px;
+}
+
+.modal__text strong {
+  color: var(--off-white);
+  font-weight: 700;
+}
+
+.modal__text a {
+  color: var(--off-white);
+  text-decoration: none;
+  border-bottom: 1px solid var(--steel);
+  padding-bottom: 2px;
+  transition: border-color 0.3s var(--ease);
+}
+
+.modal__text a:hover {
+  border-color: var(--neon-chartreuse);
+}
+
+.modal__divider {
+  width: 48px;
+  height: 1px;
+  background: var(--steel);
+  margin: 36px 0;
+  border: none;
+}
+
+/* Work modal — project list */
+.modal__project-list {
+  list-style: none;
+  padding: 0;
+}
+
+.modal__project-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(74, 74, 74, 0.3);
+  font-size: 0.75rem;
+}
+
+.modal__project-list li:first-child {
+  border-top: 1px solid rgba(74, 74, 74, 0.3);
+}
+
+.modal__project-name {
+  color: var(--off-white);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.modal__project-year {
+  color: var(--steel);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+}
+
+/* Contact modal — grid */
+.modal__contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px 40px;
+}
+
+.modal__contact-item {
+}
+
+.modal__contact-label {
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--steel);
+  margin-bottom: 8px;
+}
+
+.modal__contact-value {
+  font-size: 0.8rem;
+  color: var(--off-white);
+}
+
+.modal__contact-value a {
+  color: var(--off-white);
+  text-decoration: none;
+  border-bottom: 1px solid var(--steel);
+  padding-bottom: 2px;
+  transition: border-color 0.3s var(--ease);
+}
+
+.modal__contact-value a:hover {
+  border-color: var(--neon-chartreuse);
+}
+
+@media (max-width: 35rem){
+  .nav a {
+    padding: 0.5rem 0.5rem;
+  }
+}
+
+@media (max-width: 25rem){
+  .nav a {
+    padding: 0.2rem 0.2rem;
+  }
+}
+
+@media (max-width: 900px) {
+  /*.global-header {*/
+  /*  padding: 16px 20px 0;*/
+  /*  height: 80px;*/
+  /*  align-items: flex-start;*/
+  /*}*/
+
+  /*.nav a {*/
+  /*  padding: 6px 10px;*/
+  /*  font-size: 0.55rem;*/
+  /*}*/
+
+  .modal__content { padding: 40px 24px; }
+  .modal__contact-grid { grid-template-columns: 1fr; }
+
+  .modal-overlay {
+    align-items: flex-start;
+  }
+
+  .modal__content {
+    max-height: 100vh;
+    margin-top: 40px;
+    padding-bottom: 60px;
+  }
+
+  .modal__close {
+    top: 20px;
+    right: 50px;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+}

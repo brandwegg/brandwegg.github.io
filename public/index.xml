@@ -1,33 +1,47 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Johan Röjås</title>
-    <link>//localhost:1313/</link>
-    <description>Recent content on Johan Röjås</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>© 2026 Johan Röjås</copyright>
-    <lastBuildDate>Tue, 31 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
-    
+    <title>Home on Johan Röjås</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content in Home on Johan Röjås</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <lastBuildDate>Tue, 31 Mar 2026 12:28:41 +0200</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Recreating the tentacles from returnal</title>
-      <link>//localhost:1313/posts/recreating-tentacles/</link>
+      <title>New Article</title>
+      <link>http://localhost:1313/posts/exponential-height-fog/</link>
+      <pubDate>Tue, 31 Mar 2026 12:28:41 +0200</pubDate>
+      <guid>http://localhost:1313/posts/exponential-height-fog/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Returnal Tentacles</title>
+      <link>http://localhost:1313/posts/tentacles/</link>
       <pubDate>Tue, 31 Mar 2026 00:00:00 +0000</pubDate>
-      
-      <guid>//localhost:1313/posts/recreating-tentacles/</guid>
+      <guid>http://localhost:1313/posts/tentacles/</guid>
       <description>For my specialisation at TGE, I decided to recreate an iconic VFX from returnal.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/posts/recreating-tentacles/cover.png" />
     </item>
-    
     <item>
-      <title>About me</title>
-      <link>//localhost:1313/about-me/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>//localhost:1313/about-me/</guid>
-      <description>&lt;p&gt;I&amp;rsquo;m a student at &lt;a href=&#34;https://thegameassembly.com/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;The Game Assembly&lt;/a&gt; with a great passion for programming.&#xA;What peaks my interest the most is graphics; from architecture and pipeline to VFX, as well as gameplay.&lt;/p&gt;</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/about-me/cover.png" />
+      <title>Input buffered action system</title>
+      <link>http://localhost:1313/posts/action-system/</link>
+      <pubDate>Wed, 04 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/action-system/</guid>
+      <description>A system that manages actions and input buffers.</description>
     </item>
-    
+    <item>
+      <title>Godrays</title>
+      <link>http://localhost:1313/posts/godrays/</link>
+      <pubDate>Thu, 01 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/godrays/</guid>
+      <description>Screen-space volumetric godrays.</description>
+    </item>
+    <item>
+      <title>Masked transparency</title>
+      <link>http://localhost:1313/posts/masked-transparency/</link>
+      <pubDate>Thu, 01 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/masked-transparency/</guid>
+      <description>Faked transparency using masking of opaque objects.</description>
+    </item>
   </channel>
 </rss>

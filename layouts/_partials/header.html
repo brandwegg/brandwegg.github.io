@@ -1,0 +1,30 @@
+
+<a href="/" class="logo"><img src="/favicon.ico">
+    {{ $s := site.Title }}
+    {{ $words := split $s " " }}
+    {{ $half := div (len $s) 2 }}
+
+    {{ $part1 := slice }}
+    {{ $part2 := slice }}
+    {{ $currentLen := 0 }}
+    {{ $splitDone := false }}
+
+    {{ range $words }}
+        {{ if $splitDone }}
+            {{ $part2 = $part2 | append . }}
+        {{ else }}
+            {{ $part1 = $part1 | append . }}
+            {{ $currentLen = add $currentLen (add (len .) 1) }}
+            {{ if ge $currentLen $half }}
+                {{ $splitDone = true }}
+            {{ end }}
+        {{ end }}
+    {{ end }}
+
+    {{ $firstHalf := delimit $part1 " " }}
+    {{ $secondHalf := delimit $part2 " " }}
+
+    <p>{{ $firstHalf }}<br>{{ $secondHalf }}</p>
+
+</a>
+{{ partial "menu.html" (dict "menuID" "main" "page" .) }}

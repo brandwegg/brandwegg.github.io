@@ -1,0 +1,288 @@
+@import "details.css";
+
+/* ============================================
+   COMPRESSION — CSS-Only Kinetic Portfolio
+   TM-620
+   https://templatemo.com/tm-620-compression
+   Design: TemplateMo
+   ============================================ */
+
+/* --- THE TRACK --- */
+div.track {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100vh;
+    /*overflow: hidden;*/
+    gap: 0;
+}
+
+/* --- THE SLICES --- */
+article.panel {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    /*cursor: pointer;*/
+    border-right: 1px solid var(--seam);
+    border-radius: 0;
+    transition: flex var(--duration) var(--ease);
+}
+
+article.panel:last-child {
+    border-right: none;
+}
+
+.panel__bg {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    overflow: hidden;
+
+    filter: brightness(0.4) grayscale(100%);
+    transform: scale(1);
+    transition:
+            filter var(--duration) var(--ease),
+            transform var(--duration) var(--ease);
+}
+
+/*TODO: use mask for landing page and make a gallery instead of annoying animations. They are annoying to interact with, laggy, and don't work on mobile.*/
+.panel__bg {
+    -webkit-mask-image: linear-gradient(-45deg, black 0%, transparent 35% , transparent 50%, transparent 65%, black 100%);
+    /*mask-image: linear-gradient(-65deg, black 0%, transparent 50% , transparent 50%, transparent 50%, black 10%);*/
+    --clamped-ratio: clamp(-1, calc(var(--ratio) - 1), 1);
+    --angle:calc(65deg - var(--clamped-ratio)*20deg);
+    mask-image: linear-gradient(var(--angle), rgba(0,0,0,0.2) 0% 50%, black 50% 100%);
+}
+
+.panel__bg img, video {
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    border-radius: 0;
+}
+
+/*.panel__video {*/
+/*    position: fixed;*/
+/*    left: 50%;*/
+/*    top: 50%;*/
+/*    bottom: auto;*/
+/*    right: auto;*/
+/*    min-width: 100%;*/
+/*    min-height: 100%;*/
+/*    transform: translateX(-50%) translateY(-50%);*/
+/*    z-index: -100;*/
+/*    background-position: center;*/
+/*    background-size: cover;*/
+/*    background-repeat: no-repeat;*/
+/*    filter: brightness(0.85) grayscale(0%);*/
+/*}*/
+
+/*.panel__bg::after {*/
+/*    content: '';*/
+/*    position: absolute;*/
+/*    inset: 0;*/
+/*    background: linear-gradient(*/
+/*            180deg,*/
+/*            rgba(26, 26, 26, 0.5) 0%,*/
+/*            transparent 30%,*/
+/*            transparent 60%,*/
+/*            rgba(26, 26, 26, 0.6) 100%*/
+/*    );*/
+/*    z-index: 2;*/
+/*    transition: opacity var(--duration) var(--ease);*/
+/*}*/
+
+/* Panel index */
+.panel__index {
+    position: absolute;
+    top: 42px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--off-white);
+    opacity: 0.35;
+    transition: opacity var(--duration) var(--ease);
+    white-space: nowrap;
+}
+
+/* --- THE SPINE --- */
+.spine {
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%) rotate(180deg);
+    z-index: 10;
+    writing-mode: vertical-rl;
+    font-family: var(--font-sans);
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    text-transform: uppercase;
+    color: var(--off-white);
+    letter-spacing: 0.05em;
+    line-height: 1;
+    white-space: nowrap;
+    opacity: 1;
+    transition:
+            opacity 0.4s var(--ease),
+            transform 0.4s var(--ease);
+    pointer-events: none;
+}
+
+
+/* ===========================================
+   COMPRESSION ENGINE — HOVER STATES
+   =========================================== */
+
+div.track:hover > article.panel {
+    flex: 1;
+}
+
+div.track > article.panel:hover {
+    flex: 6;
+}
+
+article.panel:hover .panel__bg {
+    filter: brightness(0.85) grayscale(0%);
+    transform: scale(1);
+}
+
+
+
+article.panel:hover .spine {
+    opacity: 0.2;
+    transform: translateX(-50%) rotate(180deg) translateY(-20px);
+}
+
+article.panel:hover .details {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+    /*content-visibility: visible;*/
+}
+
+div.track:hover > article.panel .panel__index {
+    opacity: 0;
+}
+
+article.panel:hover .panel__index {
+    opacity: 0.35 !important;
+}
+
+/* --- ENTRANCE ANIMATION --- */
+@keyframes sliceIn {
+    0% { transform: scaleX(0); opacity: 0; }
+    100% { transform: scaleX(1); opacity: 1; }
+}
+
+@keyframes fadeUp {
+    0% { opacity: 0; transform: translateY(12px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/*TODO: make and set transform of the container, then animate the entry relative ot that.*/
+@keyframes fadeUpSpine {
+    0% { opacity: 0; transform: translateX(-50%) rotate(180deg) translateY(-40px); }
+    100% { opacity: 1; transform: translateX(-50%) rotate(180deg) translateY(0px); }
+}
+
+article.panel {
+    transform-origin: left center;
+    animation: sliceIn 1s var(--ease-heavy) both;
+}
+
+
+
+article.panel:nth-child(1) { animation-delay: 0.05s; }
+article.panel:nth-child(2) { animation-delay: 0.15s; }
+article.panel:nth-child(3) { animation-delay: 0.25s; }
+article.panel:nth-child(4) { animation-delay: 0.35s; }
+article.panel:nth-child(5) { animation-delay: 0.45s; }
+
+.global-header,
+.global-footer {
+    animation: fadeUp 0.6s var(--ease-heavy) 0.7s both;
+}
+
+.spine {
+    animation: fadeUpSpine 0.5s var(--ease-heavy) backwards;
+}
+
+article.panel:nth-child(1) .spine { animation-delay: 0.6s; }
+article.panel:nth-child(2) .spine { animation-delay: 0.7s; }
+article.panel:nth-child(3) .spine { animation-delay: 0.8s; }
+article.panel:nth-child(4) .spine { animation-delay: 0.9s; }
+article.panel:nth-child(5) .spine { animation-delay: 1.0s; }
+
+/*.on-screen {*/
+/*    transform-origin: left center;*/
+/*    animation: sliceIn 0.5s var(--ease-heavy) both;*/
+/*    animation-delay: 0.0s;*/
+
+/*    .panel__bg*/
+/*    {*/
+/*        animation-delay: -5.0s;*/
+/*    }*/
+/*}*/
+
+/* --- RESPONSIVE --- */
+@media (max-width: 900px) {
+    /*article.panel > * + * {*/
+    /*    animation-delay: 0.0s;*/
+
+    /*    .spine{*/
+    /*        animation-delay: 0.0s;*/
+    /*    }*/
+    /*}*/
+
+    main.track {
+        flex-direction: column;
+        height: auto;
+        min-height: 100vh;
+    }
+
+    article.panel {
+        flex: none !important;
+        width: 100%;
+        height: 50vh;
+        border-right: none;
+        border-bottom: 1px solid var(--seam);
+    }
+
+    article.panel:last-child {
+        border-bottom: none;
+    }
+
+    .panel__bg {
+        filter: brightness(0.7) grayscale(0%) !important;
+        transform: scale(1) !important;
+    }
+
+    .spine { display: none; }
+
+    .panel__index {
+        opacity: 0.35 !important;
+        top: 20px;
+        font-size: 0.55rem;
+    }
+
+
+    body {
+        overflow-y: auto;
+        overflow-x: hidden;
+        height: auto;
+    }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

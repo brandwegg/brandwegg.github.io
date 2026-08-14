@@ -1,0 +1,27 @@
+﻿{{- $media := .}}
+{{with .Page.Resources.GetMatch .Destination}}
+    {{- $source := $media.Destination | safeURL }}
+    {{- $mainType := .MediaType.MainType}}
+    {{- $type := .MediaType.Type}}
+{{/*    {{- $aspect_ratio := math.Div .Width .Height }}*/}}
+    {{- $codecs := .}}
+
+    {{/*    TODO: use aspect_ratio to default a size for the media before it loads.*/}}
+    <div class="media-container" >
+        {{if eq $mainType "image" }}
+            <img
+                src="{{ $source }}"
+                title="{{ $media.Title }}"
+                alt="{{ $media.PlainText }}"
+                loading="lazy"
+            >
+        {{else if eq $mainType "video" }}
+            <video  autoplay muted loop playsinline preload="metadata" loading="lazy">
+                <source
+                    src="{{$source}}"
+    {{/*                type="{{$type}}"*/}}
+                >
+            </video>
+        {{- end}}
+    </div>
+{{- end}}

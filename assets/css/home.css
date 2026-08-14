@@ -1,0 +1,277 @@
+@import url(details.css);
+
+html{
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    /* Chrome, Safari and Opera */
+    ::-webkit-scrollbar {
+        display: none;
+    }
+    overflow: hidden;
+}
+
+html,main,body{
+    background-color: black;
+}
+
+img, video {
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    border-radius: 0;
+}
+
+/*@keyframes parallax__opacity {*/
+/*    0%{*/
+/*        opacity: 1;*/
+/*    }*/
+/*    40%{*/
+/*        opacity: 0.5;*/
+/*    }*/
+/*    50%{*/
+/*        opacity: 1;*/
+/*    }*/
+/*    60%{*/
+/*        opacity: 0.5;*/
+/*    }*/
+/*    100%{*/
+/*        opacity: 1;*/
+/*    }*/
+/*}*/
+
+.filter{
+    /*container: normal;*/
+    /*container-name: filter;*/
+    pointer-events: none;
+    /*anchor-scope: all;*/
+    /*position-anchor: --carousel;*/
+    /*top: anchor(center);*/
+    /*left: anchor(center);*/
+    position: fixed;
+
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+
+    background-color: rgba(0, 0, 0, 1);
+
+    --clamped-ratio: clamp(-1, calc(var(--ratio) - 1), 1);
+    --is-landscape: calc(clamp(0, round(down,var(--ratio)), 1));
+    --angle:calc(10deg + 70deg * var(--is-landscape) - var(--clamped-ratio)*5deg);
+    --gradient: linear-gradient(var(--angle), rgba(0,0,0,0.5) 0% calc(50% - 10% * var(--is-landscape) - 2px), rgba(0,0,0,0.0) calc(50% - 10% * var(--is-landscape)) 100%);
+    -webkit-mask-image: var(--gradient);
+    mask-image: var(--gradient);
+
+    /*opacity:0;*/
+    /*animation: parallax__opacity linear both;*/
+    /*animation-timeline: view(x);*/
+    /*animation-range: cover;*/
+    /*timeline-scope: --parallax-item;*/
+}
+
+.carousel {
+    height: 100%;
+    width: 100%;
+    anchor-name: --carousel;
+    /*counter-reset: page curpage;*/
+    display: flex;
+    overflow-x: auto;
+    scrollbar-width: none;
+    /*border-radius: 20px;*/
+    /*box-shadow: var(--shadow-6);*/
+    list-style-type: none;
+    padding: 0;
+    /*margin: 5vmin;*/
+    scroll-marker-group: before;
+    view-timeline-name: --parallax-item;
+
+    overscroll-behavior-x: contain;
+
+    scroll-snap-type: x mandatory;
+
+    @media (prefers-reduced-motion: no-preference) {
+        scroll-behavior: smooth;
+    }
+
+    > *[hidden]{
+        content-visibility: hidden;
+    }
+
+    .carousel__slide {
+
+        padding: 0;
+        max-inline-size: initial;
+        inline-size: 100cqi;
+        overflow: clip;
+        contain-intrinsic-inline-size: 100cqi;
+        /*content-visibility: auto;*/
+
+        flex: 0 0 100%;
+        scroll-snap-stop: always;
+        scroll-snap-align: center;
+        position: relative; /* containing block for the img etc, not required for sticky itself */
+
+        /* This is what puts sticky-corner at the bottom-left of the slide */
+        display: flex;
+        align-items: flex-end;   /* pins vertically to bottom */
+        justify-content: flex-start; /* pins horizontally to left, in normal flow */
+    }
+
+    &::scroll-marker-group {
+        z-index: 10;
+        /*width: 100%;*/
+        /*content: "Hi";*/
+        position: fixed;
+        position-anchor: --carousel;
+        /*inset-block-start: calc(anchor(top) - 40px);*/
+        /*inset-inline-end: calc(anchor(right) - 30px);*/
+        /*background: none;*/
+        /*bottom: anchor(bottom);*/
+        /*right: anchor(center);*/
+        /*right: 33svw;*/
+
+        bottom: anchor(bottom);
+        bottom: 3.75rem;
+        left:25%;
+
+        grid-area: markers; /* place markers in parent grid area */
+
+        /* 15px by 15px horizontal grid - size of dots */
+        display: grid;
+        place-content: safe center;
+        grid: 1rem / auto-flow 1rem;
+        gap: 1rem;
+        padding: 0;
+        width: 100%;
+        /*scroll-padding: 0.5rem;*/
+
+
+        /* handle overflow */
+        overflow: auto;
+        overscroll-behavior-x: contain;
+        scrollbar-width: none;
+        scroll-snap-type: x mandatory;
+    }
+
+    /* a marker for each slide */
+    & > .carousel__slide {
+        /* create by adding content */
+        &::scroll-marker {
+            content: " "; /* empty content is fine, just like ::before */
+
+            /* style it as you need */
+            /*border: 1px solid #bbb;*/
+            background: var(--ash);
+            /*border-radius: 50%;*/
+            outline-offset: 4px;
+            -webkit-tap-highlight-color: transparent;
+
+            /* snap if group is overflowing */
+            scroll-snap-align: center;
+        }
+
+        &::scroll-marker:is(:hover, :focus-visible) {
+            border-color: var(--neon-chartreuse);
+        }
+
+        &::scroll-marker:target-current {
+            background: var(--neon-chartreuse);
+            border-color: var(--neon-chartreuse);
+        }
+    }
+}
+
+@keyframes parallax__bg {
+    from{
+        translate: -25%;
+        content-visibility: visible;
+    }
+    to{
+        translate: 25%;
+        content-visibility: visible;
+    }
+}
+
+
+
+@keyframes parallax__opacity-details {
+    0%,75%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes show-content {
+    to{
+        content-visibility: visible;
+    }
+}
+
+.carousel__slide {
+    /*content-visibility: hidden;*/
+    /*animation: show-content linear both;*/
+    /*animation-timeline: view(x);*/
+    /*animation-range: cover -10px;*/
+    /*timeline-scope: --parallax-item;*/
+
+    & .details {
+        animation: parallax__opacity-details linear both;
+        animation-timeline: view(x);
+        animation-range: 0cqw 100cqw;
+        timeline-scope: --parallax-item;
+
+        height: auto;
+        min-height: 40svh;
+
+        position: sticky;
+        left: 0;
+        padding-left: 3rem;
+        padding-bottom: 3rem;
+        padding-right: 3rem;
+        z-index:10;
+    }
+
+    & .slide__bg {
+        content-visibility: hidden;
+        width: 100%;
+        height: 100%;
+        min-width: 100%;
+        min-height:100%;
+        z-index: 0;
+
+        animation: parallax__bg linear both;
+        animation-timeline: view(x);
+        animation-range: cover;
+        timeline-scope: --parallax-item;
+
+        position: absolute;
+        /*translate: calc((view(x) * 2 - 1) * 50%);*/
+    }
+}
+
+@media (max-width: 35rem)
+{
+    .details {
+        padding-bottom: 5rem !important;
+    }
+
+    .carousel{
+        &::scroll-marker-group {
+            left:0;
+            bottom: 2rem;
+        }
+    }
+}
+
+/*.fixed-logo {*/
+/*    position: fixed;*/
+/*    position-anchor: --carousel;*/
+/*    inset-block-start: calc(anchor(top) + 30px);*/
+/*    inset-inline-start: calc(anchor(left) + 30px);*/
+/*    max-inline-size: 150px*/
+/*}*/

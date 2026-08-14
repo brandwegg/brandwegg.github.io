@@ -1,0 +1,56 @@
+{{/*{{ define "main" }}*/}}
+{{/*    {{ partial "head/css.html" (dict "page" . "style" "css/home.css") }}*/}}
+{{/*    {{ partial "head/js.html" (dict "page" . "script" "js/home.js") }}*/}}
+{{/**/}}
+{{/*    <div class="carousel carousel--unsnapped-inert" role="region" aria-label="Portfolio Projects">*/}}
+{{/*        <div class="filter"></div>*/}}
+{{/*        */}}{{/*TODO: sort by weight/date etc.*/}}
+{{/*        {{ range first 5 (where site.RegularPages "Draft" false) }}*/}}
+{{/*            <div class="carousel__slide">*/}}
+{{/*                <div inert class="slide__bg">*/}}
+{{/*                    {{ with .Resources.GetMatch "bg.*" }}*/}}
+{{/*                        {{- $file := . }}*/}}
+{{/*                        {{- $mainType := $file.MediaType.MainType }}*/}}
+{{/*                        {{- $type := $file.MediaType.Type }}*/}}
+{{/*                        {{ if eq $mainType "image" }}*/}}
+{{/*                            <img src="{{ $file.RelPermalink }}" alt="{{ .Title }}" loading="lazy">*/}}
+{{/*                        {{ else if eq $mainType "video" }}*/}}
+{{/*                            <video autoplay muted loop loading="lazy">*/}}
+{{/*                                <source src="{{ $file.RelPermalink }}">*/}}
+{{/*                            </video>*/}}
+{{/*                        {{- end }}*/}}
+{{/*                    {{- end }}*/}}
+{{/*                </div>*/}}
+{{/*                {{ partial "details.html" . }}*/}}
+{{/*            </div>*/}}
+{{/*        {{ end }}*/}}
+{{/*    </div>*/}}
+{{/*{{ end }}*/}}
+
+{{ define "main" }}
+    {{ partial "head/css.html" (dict "page" . "style" "css/section.css") }}
+    <div class="content">
+        {{/*TODO: section of pages with subpages (such as assignments, the engine etc)*/}}
+        {{ range (where site.RegularPages "Draft" false) }}
+            {{- $title := .Title }}
+            <article class="panel">
+                <a href="{{ .RelPermalink }}"></a>
+                <div inert class="panel__bg">
+                    {{ with .Resources.GetMatch "bg.*" }}
+                        {{- $type := .MediaType.MainType }}
+                        {{ if eq $type "image" }}
+                            <img src="{{ .RelPermalink }}" alt="{{ $title }}" class="panel__img" loading="lazy">
+                        {{ else if eq $type "video" }}
+                            <video autoplay muted loop class="panel__video" loading="lazy">
+                                <source src="{{ .RelPermalink }}" type="video/mp4">
+                            </video>
+                        {{- end }}
+                    {{- end }}
+                </div>
+                {{ partial "details.html" . }}
+
+            </article>
+        {{ end }}
+    </div>
+{{ end }}
+
