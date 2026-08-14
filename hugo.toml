@@ -23,6 +23,10 @@ title = 'Johan Röjås'
     extended = false
     min = '0.146.0'
 
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
+
 [markup]
   [markup.goldmark]
     [markup.goldmark.parser]
