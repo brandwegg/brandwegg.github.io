@@ -220,21 +220,17 @@ in preparing they pulsate faster and brighter as well as straightening out, and 
 
 ## Evaluation
 
-The pacing of the project kept mostly in-line with my planning and I managed to 
-break it down into small enough blocks that I didn't really get stuck anywhere.
-In general I'm quite satisfied with my approach, but there's still plenty of 
-improvements that could be made and features I wish I had time to implement. 
+The planning worked out well. The project was broken down into small enough chunks
+to proceed smoothly throughout. It all worked out smoothly and according to plan, 
+but there's still plenty of additions that could be made. 
 
-I would have liked to make a more realistic physics model for the simulation. 
-For example, they currently don't preserve momentum very well. 
-That makes them feel a bit floaty, which still looks nice in some applications, just not physically believable. 
-
+It would be fun to make a more realistic physics model for the simulation. 
+For example, they currently don't preserve momentum very well.
 They also break down a little when they’re moving fast, 
 especially with long chains and at lower frame rates, due to the temporal aspect of the solver.
-A potential fix for that might be moving them in local space. 
+A potential fix for that might be moving them in local space relative the attached entity. 
 This would involve applying the transform + rotation to every particle in the chain rather than only the bottom one and have the movement propagate. 
 Then, to simulate momentum, a force would be applied according to the inverse to the movement. 
 This force could be dampened to prevent extreme movement from breaking the simulation.
 
-It would also be fun to make them interact with geometry using SDFs, 
-but that was way out of scope for this project.
+It would also be fun to make them interact with geometry using SDFs.
