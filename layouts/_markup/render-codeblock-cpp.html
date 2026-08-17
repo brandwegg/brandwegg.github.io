@@ -6,6 +6,7 @@
 {{ $enum_value_id := "ev"}}
 
 {{ $keywords := slice}}
+{{ $keyword_constants := slice}}
 {{ $classes := slice}}
 {{ $enum_values := slice}}
 
@@ -33,7 +34,8 @@
 {{/*    {{$enum_values = .Get $enum_value_id}}*/}}
 {{/*{{else}}*/}}
 {{/*    {{partial "debug/p-log.html" "not found"}}*/}}
-    {{ $keywords = (slice "true" "false" "size_t" "uint8_t" "uint16_t" "uint32_t" "uint64_t" "if")}}
+    {{ $keywords = (slice "size_t" "uint8_t" "uint16_t" "uint32_t" "uint64_t" "if")}}
+    {{ $keyword_constants = (slice "true" "false" "nullptr") }}
     {{ $classes = (slice "function" "unordered_map" "array" "vector")}}
     {{ $enum_values = slice}}
 {{/*{{end}}*/}}
@@ -54,7 +56,7 @@
 {{end}}
 
 
-{{ $registry := (dict "nc" $classes "k" $keywords "ev" $enum_values)}}
+{{ $registry := (dict "nc" $classes "k" $keywords "kc" $keyword_constants "ev" $enum_values)}}
 {{.Page.Store.Set $page_register $registry}}
 
 

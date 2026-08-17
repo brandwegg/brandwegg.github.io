@@ -2,6 +2,7 @@
     --background-color: #272822;
 }
 
+
 .chroma{
     /* Error */ .err { color:#960050;background-color:#1e0010 }
     /* LineLink */ .lnlinks { outline:none;text-decoration:none;color:inherit }

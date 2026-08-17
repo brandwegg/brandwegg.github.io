@@ -4,7 +4,7 @@
 }
 
 .chroma{
-    /* PreWrapper */  { color:#ebdbb2;background-color:#282828;-webkit-text-size-adjust:none; }
+
     /* LineLink */  .lnlinks { outline:none;text-decoration:none;color:inherit }
     /* LineTableTD */  .lntd { vertical-align:top;padding:0;margin:0;border:0; }
     /* LineTable */  .lntable { border-spacing:0;padding:0;margin:0;border:0; }
@@ -13,7 +13,7 @@
     /* LineNumbers */  .ln { white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#756d59 }
     /* Line */  .line { display:flex; }
     /* Keyword */  .k { color:#fe8019 }
-    /* KeywordConstant */  .kc { color:#fe8019 }
+    /* KeywordConstant */  .kc { color:#d3869b }
     /* KeywordDeclaration */  .kd { color:#fe8019 }
     /* KeywordNamespace */  .kn { color:#fe8019 }
     /* KeywordPseudo */  .kp { color:#fe8019 }
@@ -50,6 +50,7 @@
     /* LiteralNumberInteger */  .mi { color:#d3869b }
     /* LiteralNumberIntegerLong */  .il { color:#d3869b }
     /* LiteralNumberOct */  .mo { color:#d3869b }
+    /* EnumValue */  .ev { color:#d3869b }
     /* Operator */  .o { color:#fe8019 }
     /* OperatorWord */  .ow { color:#fe8019 }
     /* Comment */  .c { color:#928374;font-style:italic }

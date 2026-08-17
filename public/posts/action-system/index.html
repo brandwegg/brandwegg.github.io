@@ -201,6 +201,8 @@ and the timers for keeping track of the current state of the action.</p>
 
 
 
+
+    
     
     
     
@@ -208,8 +210,8 @@ and the timers for keeping track of the current state of the action.</p>
 
 
 
-
-
+    
+    
     
 
 
@@ -218,40 +220,17 @@ and the timers for keeping track of the current state of the action.</p>
 
 
 
-
-
-
-
-
-
-
-
     
-        
-        
-        
-        
-    
-        
-        
-        
-        
-    
-        
-        
-        
-        
-    
-        
-        
-        
-        
-    
-        
-        
-        
-        
-    
+
+
+
+
+
+
+
+
+
+
 
     
         
@@ -294,7 +273,76 @@ and the timers for keeping track of the current state of the action.</p>
         
         
     
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
 
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
     
         
         
@@ -362,16 +410,16 @@ and the timers for keeping track of the current state of the action.</p>
 </span></span></span><span class="line"><span class="cl"><span class="c1">// Params: PlayerAction&amp;, const PlayerState&amp;
 </span></span></span><span class="line"><span class="cl"><span class="c1">// Return: bool
 </span></span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nc">ActionCallback</span> <span class="n">onBegin</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="nc">ActionCallback</span> <span class="n">onCharge</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="nc">ActionCallback</span> <span class="n">onTrigger</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="nc">ActionCallback</span> <span class="n">onUpdate</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="nc">ActionCallback</span> <span class="n">onEnd</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="nc">ActionCallback</span> <span class="n">onInterrupt</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="nc">ActionCallback</span> <span class="n">onBegin</span> <span class="o">=</span> <span class="kc">nullptr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="nc">ActionCallback</span> <span class="n">onCharge</span> <span class="o">=</span> <span class="kc">nullptr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="nc">ActionCallback</span> <span class="n">onTrigger</span> <span class="o">=</span> <span class="kc">nullptr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="nc">ActionCallback</span> <span class="n">onUpdate</span> <span class="o">=</span> <span class="kc">nullptr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="nc">ActionCallback</span> <span class="n">onEnd</span> <span class="o">=</span> <span class="kc">nullptr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="nc">ActionCallback</span> <span class="n">onInterrupt</span> <span class="o">=</span> <span class="kc">nullptr</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// Parameters
 </span></span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nc">array</span><span class="o">&lt;</span><span class="kt">bool</span><span class="p">,</span> <span class="nc">Actions</span><span class="o">::</span><span class="ev">Count</span><span class="o">&gt;</span> <span class="n">isBlockedBy</span><span class="p">{</span><span class="k">false</span><span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="nc">array</span><span class="o">&lt;</span><span class="kt">bool</span><span class="p">,</span> <span class="nc">Actions</span><span class="o">::</span><span class="ev">Count</span><span class="o">&gt;</span> <span class="n">isBlockedBy</span><span class="p">{</span><span class="kc">false</span><span class="p">};</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="nc">Trigger</span> <span class="n">trigger</span> <span class="o">=</span> <span class="nc">Trigger</span><span class="o">::</span><span class="ev">OnPressed</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="nc">ButtonMappingIndex</span> <span class="n">key</span> <span class="o">=</span> <span class="ev">INVALID_BUTTON</span><span class="p">;</span>
@@ -396,7 +444,7 @@ and the timers for keeping track of the current state of the action.</p>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="kt">float</span> <span class="n">timeSinceButtonPressed</span> <span class="o">=</span> <span class="mf">0.f</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="kt">float</span> <span class="n">timeSinceButtonReleased</span> <span class="o">=</span> <span class="mf">0.f</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="kt">bool</span> <span class="n">buttonHeld</span> <span class="o">=</span> <span class="k">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">bool</span> <span class="n">buttonHeld</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="p">};</span></span></span></code></pre></div>
 
 
@@ -489,19 +537,21 @@ I will also omit all &ldquo;action.&rdquo; accesses, as well as const qualifiers
 
 
 
+
     
-    
-    
-
-
-
-
     
     
     
 
 
 
+
+    
+    
+    
+
+
+
     
 
 
@@ -515,33 +565,6 @@ I will also omit all &ldquo;action.&rdquo; accesses, as well as const qualifiers
 
 
 
-
-    
-        
-        
-        
-        
-    
-        
-        
-        
-        
-    
-        
-        
-        
-        
-    
-        
-        
-        
-        
-    
-        
-        
-        
-        
-    
 
     
         
@@ -568,6 +591,70 @@ I will also omit all &ldquo;action.&rdquo; accesses, as well as const qualifiers
         
         
         
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+
     
         
         
@@ -742,13 +829,8 @@ keep track of the resets when they all occur in one place.</p>
 
 
 
+
     
-    
-    
-
-
-
-
     
     
     
@@ -756,6 +838,13 @@ keep track of the resets when they all occur in one place.</p>
 
 
 
+    
+    
+    
+
+
+
+
 
     
 
@@ -769,11 +858,6 @@ keep track of the resets when they all occur in one place.</p>
 
 
 
-    
-        
-        
-        
-        
     
         
         
@@ -810,6 +894,26 @@ keep track of the resets when they all occur in one place.</p>
         
         
     
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
 
     
         
@@ -836,6 +940,13 @@ keep track of the resets when they all occur in one place.</p>
         
         
         
+    
+        
+        
+        
+        
+    
+
     
         
         
@@ -918,12 +1029,12 @@ keep track of the resets when they all occur in one place.</p>
 
 <div class="highlight" enum_values="Ended Interrupted Blocked"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">state</span> <span class="o">==</span> <span class="nc">ActionState</span><span class="o">::</span><span class="ev">Ended</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="n">onEnd</span> <span class="o">!=</span> <span class="k">nullptr</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="n">onEnd</span> <span class="o">!=</span> <span class="kc">nullptr</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">  <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="n">onEnd</span><span class="p">(</span><span class="n">action</span><span class="p">,</span><span class="n">aState</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">  <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="n">buttonHeld</span> <span class="o">=</span> <span class="k">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="n">buttonHeld</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">  <span class="n">timeSinceButtonPressed</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">  <span class="n">timeSinceButtonReleased</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">  <span class="n">currentCooldown</span> <span class="o">=</span> <span class="n">cooldown</span><span class="p">;</span>
@@ -933,12 +1044,12 @@ keep track of the resets when they all occur in one place.</p>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">state</span> <span class="o">==</span> <span class="nc">ActionState</span><span class="o">::</span><span class="ev">Interrupted</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="n">onInterrupt</span> <span class="o">!=</span> <span class="k">nullptr</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="n">onInterrupt</span> <span class="o">!=</span> <span class="kc">nullptr</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">  <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="n">onInterrupt</span><span class="p">(</span><span class="n">action</span><span class="p">,</span> <span class="n">aState</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">  <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="n">buttonHeld</span> <span class="o">=</span> <span class="k">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="n">buttonHeld</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">  <span class="n">timeSinceButtonPressed</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">  <span class="n">timeSinceButtonReleased</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">  <span class="n">currentCooldown</span> <span class="o">=</span> <span class="n">cooldown</span><span class="p">;</span>
@@ -1029,13 +1140,8 @@ those timers should be updated after the input is processed.</p>
 
 
 
+
     
-    
-    
-
-
-
-
     
     
     
@@ -1043,22 +1149,24 @@ those timers should be updated after the input is processed.</p>
 
 
 
-
-
-
-
-
-
-
-
-
-
-
     
-        
-        
-        
-        
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     
         
         
@@ -1095,6 +1203,26 @@ those timers should be updated after the input is processed.</p>
         
         
     
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
 
     
         
@@ -1121,6 +1249,13 @@ those timers should be updated after the input is processed.</p>
         
         
         
+    
+        
+        
+        
+        
+    
+
     
         
         
@@ -1284,13 +1419,8 @@ This has to be done before the block/interrupt stage so that it always ends up r
 
 
 
+
     
-    
-    
-
-
-
-
     
     
     
@@ -1298,22 +1428,24 @@ This has to be done before the block/interrupt stage so that it always ends up r
 
 
 
-
-
-
-
-
-
-
-
-
-
-
     
-        
-        
-        
-        
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     
         
         
@@ -1350,6 +1482,26 @@ This has to be done before the block/interrupt stage so that it always ends up r
         
         
     
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
 
     
         
@@ -1376,6 +1528,13 @@ This has to be done before the block/interrupt stage so that it always ends up r
         
         
         
+    
+        
+        
+        
+        
+    
+
     
         
         
@@ -1562,6 +1721,8 @@ action to be interrupted, or animation-canceled, by an action with higher priori
 
 
 
+
+    
     
     
     
@@ -1635,38 +1796,6 @@ action to be interrupted, or animation-canceled, by an action with higher priori
         
         
     
-
-    
-        
-        
-        
-        
-    
-        
-        
-        
-        
-    
-        
-        
-        
-        
-    
-        
-        
-        
-        
-    
-        
-        
-        
-        
-    
-        
-        
-        
-        
-    
         
         
         
@@ -1709,6 +1838,55 @@ action to be interrupted, or animation-canceled, by an action with higher priori
         
         
     
+
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
         
         
         
@@ -1741,8 +1919,8 @@ action to be interrupted, or animation-canceled, by an action with higher priori
     
 
 
-<div class="highlight" enum_values="Ongoing"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">bool</span> <span class="n">blocked</span> <span class="o">=</span> <span class="k">false</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">blockerName</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
+<div class="highlight" enum_values="Ongoing"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">bool</span> <span class="n">blocked</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">blockerName</span> <span class="o">=</span> <span class="kc">nullptr</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="k">size_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nc">Actions</span><span class="o">::</span><span class="ev">Count</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
@@ -1750,10 +1928,10 @@ action to be interrupted, or animation-canceled, by an action with higher priori
 </span></span><span class="line"><span class="cl">  <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="k">auto</span><span class="o">&amp;</span> <span class="n">blockingAction</span> <span class="o">=</span> <span class="n">aState</span><span class="p">.</span><span class="n">player</span><span class="p">.</span><span class="n">actions</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
 </span></span><span class="line"><span class="cl">    
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">blockingstate</span> <span class="o">==</span> <span class="nc">ActionState</span><span class="o">::</span><span class="ev">Ongoing</span> <span class="o">||</span> <span class="n">blockingstate</span> <span class="o">==</span> <span class="nc">ActionState</span><span class="o">::</span><span class="n">Charging</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">blockingstate</span> <span class="o">==</span> <span class="nc">ActionState</span><span class="o">::</span><span class="ev">Ongoing</span> <span class="o">||</span> <span class="n">blockingstate</span> <span class="o">==</span> <span class="nc">ActionState</span><span class="o">::</span><span class="ev">Charging</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="p">{</span>
 </span></span><span class="line"><span class="cl">      <span class="n">blockerName</span> <span class="o">=</span> <span class="n">blockingAction</span><span class="p">.</span><span class="n">name</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">      <span class="n">blocked</span> <span class="o">=</span> <span class="k">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="n">blocked</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">      <span class="k">break</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">  <span class="p">}</span>
@@ -1856,6 +2034,8 @@ The simplest is triggering it immediately when the associated button is pressed.
 
 
 
+
+    
     
     
     
@@ -1934,6 +2114,11 @@ The simplest is triggering it immediately when the associated button is pressed.
         
         
     
+        
+        
+        
+        
+    
 
     
         
@@ -1960,6 +2145,13 @@ The simplest is triggering it immediately when the associated button is pressed.
         
         
         
+    
+        
+        
+        
+        
+    
+
     
         
         
@@ -2049,7 +2241,7 @@ The simplest is triggering it immediately when the associated button is pressed.
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="n">currentChargeTime</span> <span class="o">=</span> <span class="mf">0.f</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">onBegin</span> <span class="o">!=</span> <span class="k">nullptr</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">onBegin</span> <span class="o">!=</span> <span class="kc">nullptr</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="p">{</span>
 </span></span><span class="line"><span class="cl">      <span class="n">onBegin</span><span class="p">(</span><span class="n">action</span><span class="p">,</span><span class="n">aState</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
@@ -2059,9 +2251,9 @@ The simplest is triggering it immediately when the associated button is pressed.
 </span></span><span class="line"><span class="cl">  
 </span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="n">trigger</span> <span class="o">==</span> <span class="nc">Trigger</span><span class="o">::</span><span class="ev">OnPressed</span> <span class="o">&amp;&amp;</span> <span class="n">actionPressed</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">  <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">bool</span> <span class="n">success</span> <span class="o">=</span> <span class="n">onTrigger</span> <span class="o">==</span> <span class="k">nullptr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">bool</span> <span class="n">success</span> <span class="o">=</span> <span class="n">onTrigger</span> <span class="o">==</span> <span class="kc">nullptr</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">onTrigger</span> <span class="o">!=</span> <span class="k">nullptr</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">onTrigger</span> <span class="o">!=</span> <span class="kc">nullptr</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="p">{</span>
 </span></span><span class="line"><span class="cl">      <span class="n">success</span> <span class="o">|=</span> <span class="n">onTrigger</span><span class="p">(</span><span class="n">action</span><span class="p">,</span> <span class="n">aState</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">      
@@ -2081,9 +2273,9 @@ The simplest is triggering it immediately when the associated button is pressed.
 </span></span><span class="line"><span class="cl">  
 </span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="n">trigger</span> <span class="o">==</span> <span class="nc">Trigger</span><span class="o">::</span><span class="ev">OnReleased</span> <span class="o">&amp;&amp;</span> <span class="n">actionReleased</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">  <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">bool</span> <span class="n">success</span> <span class="o">=</span> <span class="n">onTrigger</span> <span class="o">==</span> <span class="k">nullptr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">bool</span> <span class="n">success</span> <span class="o">=</span> <span class="n">onTrigger</span> <span class="o">==</span> <span class="kc">nullptr</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">onTrigger</span> <span class="o">!=</span> <span class="k">nullptr</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">onTrigger</span> <span class="o">!=</span> <span class="kc">nullptr</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="p">{</span>
 </span></span><span class="line"><span class="cl">      <span class="n">success</span> <span class="o">|=</span> <span class="n">onTrigger</span><span class="p">(</span><span class="n">action</span><span class="p">,</span> <span class="n">aState</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">      
@@ -2179,6 +2371,8 @@ The “on charge” callback executes at this point and can use this info to dec
 
 
 
+
+    
     
     
     
@@ -2288,6 +2482,13 @@ The “on charge” callback executes at this point and can use this info to dec
         
         
         
+    
+        
+        
+        
+        
+    
+
     
         
         
@@ -2372,8 +2573,8 @@ The “on charge” callback executes at this point and can use this info to dec
 </span></span><span class="line"><span class="cl"><span class="c1">// During charging
 </span></span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">state</span> <span class="o">==</span> <span class="nc">ActionState</span><span class="o">::</span><span class="ev">Charging</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>	
-</span></span><span class="line"><span class="cl">  <span class="kt">bool</span> <span class="n">attemptTrigger</span> <span class="o">=</span> <span class="k">false</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">  <span class="kt">bool</span> <span class="n">isExpired</span> <span class="o">=</span> <span class="k">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="kt">bool</span> <span class="n">attemptTrigger</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="kt">bool</span> <span class="n">isExpired</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">  
 </span></span><span class="line"><span class="cl">  <span class="k">switch</span> <span class="p">(</span><span class="n">trigger</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">  <span class="p">{</span>
@@ -2481,6 +2682,8 @@ The “on charge” callback executes at this point and can use this info to dec
 
 
 
+
+    
     
     
     
@@ -2588,6 +2791,13 @@ The “on charge” callback executes at this point and can use this info to dec
         
         
         
+    
+        
+        
+        
+        
+    
+
     
         
         
@@ -2671,9 +2881,9 @@ The “on charge” callback executes at this point and can use this info to dec
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="n">attemptTrigger</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">  <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">bool</span> <span class="n">success</span> <span class="o">=</span> <span class="n">onTrigger</span> <span class="o">==</span> <span class="k">nullptr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">bool</span> <span class="n">success</span> <span class="o">=</span> <span class="n">onTrigger</span> <span class="o">==</span> <span class="kc">nullptr</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">onTrigger</span> <span class="o">!=</span> <span class="k">nullptr</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">onTrigger</span> <span class="o">!=</span> <span class="kc">nullptr</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="p">{</span>
 </span></span><span class="line"><span class="cl">      <span class="n">success</span> <span class="o">|=</span> <span class="n">onTrigger</span><span class="p">(</span><span class="n">action</span><span class="p">,</span> <span class="n">aState</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">      
@@ -2700,7 +2910,7 @@ The “on charge” callback executes at this point and can use this info to dec
 </span></span><span class="line"><span class="cl">    <span class="n">LOG_DEBUG</span><span class="p">(</span><span class="s">&#34;Action: %s is charging&#34;</span><span class="p">,</span> <span class="n">actionName</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">    <span class="n">currentChargeTime</span> <span class="o">+=</span> <span class="n">aDeltaTime</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">onCharge</span> <span class="o">!=</span> <span class="k">nullptr</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">onCharge</span> <span class="o">!=</span> <span class="kc">nullptr</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="p">{</span>
 </span></span><span class="line"><span class="cl">      <span class="n">onCharge</span><span class="p">(</span><span class="n">action</span><span class="p">,</span> <span class="n">aState</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
@@ -2782,6 +2992,8 @@ The “on charge” callback executes at this point and can use this info to dec
 
 
 
+
+    
     
     
     
@@ -2889,6 +3101,13 @@ The “on charge” callback executes at this point and can use this info to dec
         
         
         
+    
+        
+        
+        
+        
+    
+
     
         
         
@@ -2974,7 +3193,7 @@ The “on charge” callback executes at this point and can use this info to dec
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="n">LOG_DEBUG</span><span class="p">(</span><span class="s">&#34;Action: %s is ongoing&#34;</span><span class="p">,</span> <span class="n">actionName</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">  
-</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="n">onUpdate</span> <span class="o">!=</span> <span class="k">nullptr</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="n">onUpdate</span> <span class="o">!=</span> <span class="kc">nullptr</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">  <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="n">onUpdate</span><span class="p">(</span><span class="n">action</span><span class="p">,</span> <span class="n">aState</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">  <span class="p">}</span>

@@ -1,9 +1,9 @@
 ﻿.highlight {
     /*color:#e6edf3;*/
-    --background-color:#0d1117; }
+    --background-color:#0d1117;
+}
 
 .chroma{
-    /* PreWrapper */  { color:#e6edf3;background-color:#0d1117;-webkit-text-size-adjust:none; }
     /* Error */  .err { color:#f85149 }
     /* LineLink */  .lnlinks { outline:none;text-decoration:none;color:inherit }
     /* LineTableTD */  .lntd { vertical-align:top;padding:0;margin:0;border:0; }

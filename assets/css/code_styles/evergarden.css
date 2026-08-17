@@ -5,7 +5,6 @@
 
 .chroma{
     /* Generated using: hugo gen chromastyles --style evergarden */
-
     /* LineLink */  .lnlinks { outline:none;text-decoration:none;color:inherit }
     /* LineTableTD */  .lntd { vertical-align:top;padding:0;margin:0;border:0; }
     /* LineTable */  .lntable { border-spacing:0;padding:0;margin:0;border:0; }
