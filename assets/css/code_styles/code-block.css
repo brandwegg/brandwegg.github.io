@@ -1,0 +1,33 @@
+﻿
+@import "monokai.css";
+/* Generated using: hugo gen chromastyles --style monokai */
+
+.highlight{
+    overflow-x: auto;
+    margin-top: 1.3rem;
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+    border-top: 1px solid var(--neon-chartreuse);
+    border-bottom: 1px solid var(--neon-chartreuse);
+    /*border-radius: 0.3rem;*/
+    background-color: var(--background-color);
+}
+
+/*code{max-width: 100%;}*/
+
+/*!* Background *! .bg { color:#f8f8f2;background-color:#272822; }*/
+
+.chroma{
+/*!* PreWrapper *! color:#f8f8f2;background-color:#272822;-webkit-text-size-adjust:none;width: fit-content;*/
+
+    /*.cl{*/
+    /*    > .n:is(:first-child){*/
+    /*        color:#a6e22e;*/
+    /*    }*/
+    /*}*/
+
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+}
+
+/* End of chromastyle */

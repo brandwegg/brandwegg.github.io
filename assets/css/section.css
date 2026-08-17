@@ -65,23 +65,20 @@ main{
 article.panel {
     flex: 1;
     position: relative;
-    /*overflow: hidden;*/
-    /*cursor: pointer;*/
     border-right: 1px solid var(--seam);
     border-radius: 0;
-    /*width: 50%;*/
-    /*margin-left: 25%;*/
     flex: none !important;
     height: 40vh;
     border-right: none;
     background-color: black;
     border-bottom: 1px solid var(--seam);
 
-    content-visibility: hidden;
-    animation: show-content linear both;
-    animation-timeline: view(y);
-    animation-range: cover -10px;
-    timeline-scope: --parallax-item;
+    /*TODO: find another solution with better support*/
+    /*content-visibility: hidden;*/
+    /*animation: show-content linear both;*/
+    /*animation-timeline: view(y);*/
+    /*animation-range: cover -10px;*/
+    /*timeline-scope: --parallax-item;*/
 }
 
 article.panel:last-child {
@@ -98,19 +95,10 @@ article a{
 
 .panel__bg {
     --clamped-ratio: clamp(-1, calc(var(--ratio) - 1), 1);
-    /*--is-landscape: calc(clamp(0, round(down,var(--ratio)), 1));*/
     --angle:calc(80deg - var(--clamped-ratio)*5deg);
     --gradient: linear-gradient(var(--angle), rgba(0,0,0,0.5) 0% calc(25rem - 2px), rgba(0,0,0,1.0) 25rem 100%);
     -webkit-mask-image: var(--gradient);
     mask-image: var(--gradient);
-
-    /*backdrop-filter: blur(var(--gradient));*/
-
-    /*-webkit-mask-image: linear-gradient(-45deg, black 0%, transparent 35% , transparent 50%, transparent 65%, black 100%);*/
-    /*!*mask-image: linear-gradient(-65deg, black 0%, transparent 50% , transparent 50%, transparent 50%, black 10%);*!*/
-    /*--clamped-ratio: clamp(-1, calc(var(--ratio) - 1), 1);*/
-    /*--angle:calc(65deg - var(--clamped-ratio)*20deg);*/
-    /*mask-image: linear-gradient(var(--angle), rgba(0,0,0,0.2) 0% 50%, black 50% 100%);*/
 }
 
 .panel__bg {
@@ -143,24 +131,6 @@ article a{
     display: block;
     border-radius: 0;
 }
-
-/* Panel index */
-/*.panel__index {*/
-/*    opacity: 0.35 !important;*/
-/*    top: 20px;*/
-/*    font-size: 0.55rem;*/
-/*    position: absolute;*/
-/*    top: 42px;*/
-/*    left: 50%;*/
-/*    transform: translateX(-50%);*/
-/*    z-index: 10;*/
-/*    font-size: 0.6rem;*/
-/*    letter-spacing: 0.15em;*/
-/*    text-transform: uppercase;*/
-/*    color: var(--off-white);*/
-/*    opacity: 0.35;*/
-/*    white-space: nowrap;*/
-/*}*/
 
 @media (max-width: 35rem)
 {
